@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ask Me Something</title>
+        <link rel="icon" type="image/png" href="../images/smirk.png">
+        <script src="script.js" defer></script>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                margin: 10px;
+                padding: 10px;
+            }
+            .container, h2, p { line-height: 150%; }
+            #write-something { line-height: 120%; }
+            #comment {
+                text-indent: 20px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding-top: 7px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Ask Me Something</h2>
+            <p>Type anything you want <i>(please read the rules-read-this-junk channel for a proper responce)</i></p>
+            <form id="write-something">
+                <label for="comment"></label>
+                <textarea id="comment" rows="8" cols="40" placeholder="numi noomba nya!" required></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div><br>
+    </body>
+</html>

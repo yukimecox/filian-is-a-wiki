@@ -1,0 +1,320 @@
+/* the whole website */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    /* i'm not touching this! */
+    /* margin: 0; */
+}
+
+/* also the whole website: background image */
+body {
+    background-color: rgba(253, 240, 240, 0.836);
+    margin: 8px 25px 0 25px;
+}
+#background-img { 
+    position: relative;
+    /* uncomment this will slightly clip the right side when resized to min-width in firefox */
+    /* overflow: hidden */
+}
+#background-img::before {
+    content: "";    /* background image appears before everything else above it (relative to z-axis) */   
+    background-image: url(../images/fruitSnack.png);
+    background-size: 50px 50px;     /* repeated background img in both x and y axes */
+    position: absolute;     /* set origin to top left corner of container-2 (i think) */
+    /* default reset by css */
+    top: 0;
+    left: 0;
+    /* have it be restricted to 50px 50px (note that 0 0 would default to not appear) */
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;  
+    z-index: -9999;     /* ensure that our background image always stays in the background */
+    pointer-events: none;   /* basically, delete whatever remains of the background img that we have applied to really do anything else */
+}
+a:link { color: pink;}
+a:visited { color: rgb(88, 51, 3);}
+a:hover { background-color: aqua;}
+a:active {color: red;}
+
+/* container 1: logo, website name, banner, etc. */
+#container-1 { 
+    /* i could make this as a grid, but maybe next update??? */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -10px;
+    padding-left: 10px; 
+}
+#container-1 h1 { 
+    font-size: 24px; 
+    text-align: center;
+}
+#container-1 #logo { 
+    border: 4px solid red;
+    border-radius: 100%;
+}
+/* i want to give the effect that the banner is always to the right when resizing. */
+/* these values are hard-coded to better suit this design choice. */
+#container-1 #box-2 {
+    /* i could make this as a grid, but maybe next update??? */
+    position: absolute;
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    transform: scale(0.4);
+    top: -119px;
+    right: -330px;
+}
+/* resize the banner */
+@media (max-width: 615px) {
+    #container-1 #box-2 { 
+        -webkit-transform: scale(0.31);
+        -moz-transform: scale(0.31);
+        -o-transform: scale(0.31);
+        transform: scale(0.31);
+        right: -390px;
+    }
+}
+/* for firefox */
+@media (max-width: 495px) {
+    #container-1 #box-2 { 
+        -webkit-transform: scale(0.25);
+        -moz-transform: scale(0.25);
+        -o-transform: scale(0.25);
+        transform: scale(0.25);
+        right: -420px;
+    }
+}
+
+/* container 2: sidebar, bio table, table of contents, etc. */
+#container-2 {
+    display: grid;
+    grid-template-columns: 185px auto auto;
+    gap: 20px;
+    padding: 0px;
+}
+#sidebar { 
+    display: flex;
+    flex-direction: column;
+    border: 3px solid rgba(88, 46, 23, 0.399);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    padding-left: 10px;
+    height: auto;
+}
+#sidebar video, #sidebar figcaption { display: none;}
+#tabs-container li {
+    padding-left: 0;
+    line-height: 1.5em;
+    margin-left: 0px;
+    margin-top: -7px;
+    list-style-type: none;
+}
+#content-list li{ 
+    list-style-type: none;
+    line-height: 1.25em; 
+}
+#table-of-contents header{text-decoration: underline;}
+#table-of-contents li {margin: -3px 0 0 0;}
+#message-board { height: auto;}
+#frick {
+    box-sizing: border-box;
+    background-color: rgb(162, 79, 79);
+    border: 3px dashed;
+    border-radius: 10px;
+    padding: 10px;
+    -webkit-animation: border 0.15s infinite alternate;
+    -moz-animation: border 0.15s infinite alternate;
+    -o-animation: border 0.15s infinite alternate;
+    animation: border 0.15s infinite alternate;
+}
+/* have the frick border blink instantaneously between two colours */
+@-webkit-keyframes border {
+    0% { border-color: purple; }
+    49.99% { border-color: purple; }
+    50% { border-color: white;}
+    100% { border-color: white;}
+}
+@-moz-keyframes border {
+    0% { border-color: purple; }
+    49.99% { border-color: purple; }
+    50% { border-color: white;}
+    100% { border-color: white;}
+}
+@-o-keyframes border {
+    0% { border-color: purple; }
+    49.99% { border-color: purple; }
+    50% { border-color: white;}
+    100% { border-color: white;}
+}
+@keyframes border {
+    0% { border-color: purple; }
+    49.99% { border-color: purple; }
+    50% { border-color: white;}
+    100% { border-color: white;}
+}
+#frick #special-message {
+    padding-top: 10px;
+    background-color: white;
+    border: 3px solid blue;
+    border-radius: 10px;
+    margin-left: 0px;   /* default reset to align with above text */
+    width: 340px;
+    height: 100px;
+    font-size: 15px;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#special-message audio { padding-left: 25px;} 
+#audio-desc { text-align: center;}
+#table-container table { 
+    border: 3px solid black; 
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: auto;
+    border-radius: 5px;
+}
+.cell-radius { 
+    border-radius: 5px;
+    text-align: center;
+}
+#table-container a:hover { background-color: rgba(253, 240, 240, 0.424);} 
+/* A to B instant transform */
+#table-container #glowup:hover img { 
+    -webkit-transform: rotate(-4deg) scale(1.05);
+    -moz-transform: rotate(-4deg) scale(1.05);
+    -o-transform: rotate(-4deg) scale(1.05);
+    transform: rotate(-4deg) scale(1.05);
+}
+/* A to B animate transition above */
+#table-container img { 
+    background-origin: border-box;
+    -webkit-box-shadow: 6px 6px 5px #666; 
+    -moz-box-shadow: 6px 6px 5px #666;
+    -o-box-shadow: 6px 6px 5px #666;
+    -webkit-transition: -webkit-transform 0.07s ease-out;
+    -moz-transition: -webkit-transform 0.07s ease-out; 
+    -o-transition: -webkit-transform 0.07s ease-out;
+    transition: transform 0.07s ease-out;
+    box-shadow: 3px 3px 5px #666;
+}
+/* the table should expand when adding characters for each cell. absolutely should not be in block (unless an item has capped width) */
+td, th { border: 2px solid #270ee0;}
+#table-container tr:hover { background-color: rgb(163, 147, 178);}
+#table-container th, #table-container figure { padding-right: 0px;}
+#surprise {
+    grid-area: 2 / 2 / 2 / 3;
+    max-width: 150%;
+    margin-top: -8%;
+    margin-left: 50%;
+}
+/* same idea */
+#surprise img:hover, #surprise img:focus { transform: rotate(-15deg) scale(280);}
+#surprise img { transition: transform 0.05s ease;}
+/* if screen size limits frick container, stack items */
+/* hardest to code. fun fact: this took me a week to figure this out www */
+@media (max-width: 1060px) {
+    #container-2 {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+    /* keep the same formatting before item stacking */
+    #content-links {
+        display: flex;
+        flex-direction: column;
+    }
+    /* the video and figcaption should appear. do not delete this!! */
+    #sidebar video, #sidebar figcaption { display: flex;}
+    /* change origin to be top-left of container-2; move to the farthest right side. */
+    #sidebar #hidden-video {
+        position: absolute;
+        right: -10px;
+    }
+    /* this should not appear when resized */
+    #surprise { display: none;}
+}
+/* for firefox */
+@media (max-width: 495px) {
+    /* resize the video and figcaption to their max width to fit the sidebar */
+    #sidebar video, #sidebar figcaption { 
+        max-width: 80%;
+        max-height: 80%;
+    }
+    /* move to farthest right side with this sizing. */
+    #sidebar #hidden-video { right: -70px;}
+}
+
+/* container 3: sections, audio/video, etc. */
+#container-3 { 
+    line-height: 1.25em; 
+    margin-left: 2px;
+}
+#filian #video-right-side {
+    float: right;
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin: -30px 0px -1px 0px;
+    font-size: 15px;
+}
+#container-3 #video-desc { padding-left: 10px;}
+#container-3 a:link {color: blue;}
+#container-3 a:visited {color: purple;}
+#container-3 a:hover {
+    background-color: white;
+    color: black;
+}
+#container-3 a:active {color: red;}
+#container-3 p {line-height: 1.55em; }
+.underline-thickness { position: relative;}
+.underline-thickness::after {
+    content: "";    /* the underline occurs after the word "FILIAN" */
+    position: absolute;
+    left: 0;
+    bottom: 1px; /* move the underline up or down */
+    width: 100%;
+    height: 3px; /* how thick should the underline be */
+    background-color: black; /* underline color */
+}
+#quote ul { font-weight: bold;}
+#quote ul a { text-decoration: none;}
+#quote ul, #facts ul { 
+    list-style-type: none;
+    margin-left: 50px;
+}
+.list-hover { line-height: 1.75em;}
+@media (max-width: 1035px) {
+    .list-hover {
+        line-height: 170%;
+        padding-right: 50px;
+        font-size: 15px;
+    }
+}
+
+/* container 6: copyright info */
+/* no change because of the pre element tag */
+#container-6 { padding-left: 10px;}
+#container-6 a:link { color: blue;}
+#container-6 a:visited { color: rgb(162, 79, 79);}
+#container-6 a:hover { background-color: white;}
+#container-6 a:active { color: red;}
+@media (max-width: 1035px) {
+    #container-6 { font-size: 12px;}
+}
+
+/* classes or multiple ids not specified in each container */
+.sans-font p, th {
+    font-family: "Comic Sans MS", "Comic Sans";
+    letter-spacing: 0.11px;
+}
+.awkward-spacing {line-height: 0;}
+/* for each section, upon clicking to a section, scroll to that one. top-scroll offset is 16px due to text cutoff. */
+.scroll-to {scroll-margin-top: 16px;}
+.title-underline h2 { text-decoration: underline; }
+.indent p { text-indent: 2em; }

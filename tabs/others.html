@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/smirk.png">
+        <title>Others</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            section, header, footer { margin: 20px;}
+            p { margin: 20px 20px 20px 40px;}
+            li { margin-left: 40px;}
+        </style>
+    </head>
+
+    <body>
+        <header><h1>Others</h1></header>
+        <section>
+            <p>These links don't have anything yet. Check back later or stay tuned for updates in the 
+                <a href="logs/logs.html">Update Logs</a>:
+            </p>
+            <li id="is-mistake"><a href="https://www.youtube.com/watch?v=L2bq4eD3y_U&t=4s" target="_blank">R34</a></li>
+            <li><a href="artwork.html">Artwork</a></li>
+            <li><a href="collabs.html">Collaborations</a></li>
+            <li><a href="comingsoon.html">Coming Soon</a></li>
+        </section><hr>
+
+        <footer>
+            <a href="../index.html">Back to the article</a>
+        </footer>
+
+        <!-- might open two tabs in firefox (tee-hee). later updates will be fixed -->
+        <script>
+            var isDecisionBad = document.getElementById("is-mistake");
+            isDecisionBad.addEventListener("click", function(event) {
+                var isDecisionBad = confirm("Are you sure?");
+                if (isDecisionBad) { window.open(event.target.href, '_blank');}
+                else { event.preventDefault();} 
+            });
+        </script>
+    </body>
+</html>
