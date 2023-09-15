@@ -3,19 +3,19 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     padding: 0;
-    /* i'm not touching this! */
-    /* margin: 0; */
+    margin: 0;
+    max-width: 100%;
 }
 
 /* also the whole website: background image */
 body {
     background-color: rgba(253, 240, 240, 0.836);
-    margin: 8px 25px 0 25px;
+    margin: 8px 25px 10px 25px;
 }
 #background-img { 
     position: relative;
     /* uncomment this will slightly clip the right side when resized to min-width in firefox */
-    /* overflow: hidden */
+    /* overflow: hidden; */
 }
 #background-img::before {
     content: "";    /* background image appears before everything else above it (relative to z-axis) */   
@@ -29,8 +29,10 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0.15;  
-    z-index: -9999;     /* ensure that our background image always stays in the background */
-    pointer-events: none;   /* basically, delete whatever remains of the background img that we have applied to really do anything else */
+    /* ensure that our background image always stays in the background */
+    z-index: -9999;
+    /* basically, delete whatever remains of the background img that we have applied to really do anything else */
+    pointer-events: none;   
 }
 a:link { color: pink;}
 a:visited { color: rgb(88, 51, 3);}
@@ -38,52 +40,31 @@ a:hover { background-color: aqua;}
 a:active {color: red;}
 
 /* container 1: logo, website name, banner, etc. */
-#container-1 { 
-    /* i could make this as a grid, but maybe next update??? */
-    display: flex;
+/* figure this out afterwards. do so for each container */
+#container-1 {
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: -10px;
-    padding-left: 10px; 
 }
-#container-1 h1 { 
-    font-size: 24px; 
-    text-align: center;
+.box-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
-#container-1 #logo { 
-    border: 4px solid red;
+.box-1 img {
+    width: 100px;
     border-radius: 100%;
+    border: 4px solid red;
 }
-/* i want to give the effect that the banner is always to the right when resizing. */
-/* these values are hard-coded to better suit this design choice. */
-#container-1 #box-2 {
-    /* i could make this as a grid, but maybe next update??? */
-    position: absolute;
-    -webkit-transform: scale(0.4);
-    -moz-transform: scale(0.4);
-    -o-transform: scale(0.4);
-    transform: scale(0.4);
-    top: -119px;
-    right: -330px;
+.box-1 h1 {
+    font-size: 22px;
+    line-height: 1.5rem;
 }
-/* resize the banner */
-@media (max-width: 615px) {
-    #container-1 #box-2 { 
-        -webkit-transform: scale(0.31);
-        -moz-transform: scale(0.31);
-        -o-transform: scale(0.31);
-        transform: scale(0.31);
-        right: -390px;
-    }
-}
-/* for firefox */
-@media (max-width: 495px) {
-    #container-1 #box-2 { 
-        -webkit-transform: scale(0.25);
-        -moz-transform: scale(0.25);
-        -o-transform: scale(0.25);
-        transform: scale(0.25);
-        right: -420px;
+.box-2 img { max-width: 100%;}
+@media (max-width: 530px) {
+    #container-1 .box-2{
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -92,32 +73,33 @@ a:active {color: red;}
     display: grid;
     grid-template-columns: 185px auto auto;
     gap: 20px;
-    padding: 0px;
+    padding-top: 10px;
 }
 #sidebar { 
     display: flex;
     flex-direction: column;
     border: 3px solid rgba(88, 46, 23, 0.399);
-    border-radius: 10px;
-    box-sizing: border-box;
+    border-radius: 12px;
     background-color: white;
-    padding-left: 10px;
     height: auto;
+    padding: 15px 10px;
 }
+#sidebar li { list-style-type: none;}
 #sidebar video, #sidebar figcaption { display: none;}
+#content-links { 
+    display: grid;
+    gap: 20px;
+}
 #tabs-container li {
-    padding-left: 0;
     line-height: 1.5em;
-    margin-left: 0px;
     margin-top: -7px;
-    list-style-type: none;
 }
-#content-list li{ 
-    list-style-type: none;
-    line-height: 1.25em; 
+#content-list li{ line-height: 1.25em;}
+#table-of-contents header { 
+    text-decoration: underline;
+    padding-bottom: 20px;
 }
-#table-of-contents header{text-decoration: underline;}
-#table-of-contents li {margin: -3px 0 0 0;}
+#table-of-contents li { margin-top: -3px;}
 #message-board { height: auto;}
 #frick {
     box-sizing: border-box;
@@ -125,35 +107,15 @@ a:active {color: red;}
     border: 3px dashed;
     border-radius: 10px;
     padding: 10px;
-    -webkit-animation: border 0.15s infinite alternate;
-    -moz-animation: border 0.15s infinite alternate;
-    -o-animation: border 0.15s infinite alternate;
     animation: border 0.15s infinite alternate;
 }
+/* change the title when resizing. >= 400px */
+#frick h2::before { content: "What The Frick Is This";}
+#frick h2, p, #special-message { margin-top: 20px;}
 /* have the frick border blink instantaneously between two colours */
-@-webkit-keyframes border {
-    0% { border-color: purple; }
-    49.99% { border-color: purple; }
-    50% { border-color: white;}
-    100% { border-color: white;}
-}
-@-moz-keyframes border {
-    0% { border-color: purple; }
-    49.99% { border-color: purple; }
-    50% { border-color: white;}
-    100% { border-color: white;}
-}
-@-o-keyframes border {
-    0% { border-color: purple; }
-    49.99% { border-color: purple; }
-    50% { border-color: white;}
-    100% { border-color: white;}
-}
 @keyframes border {
-    0% { border-color: purple; }
-    49.99% { border-color: purple; }
-    50% { border-color: white;}
-    100% { border-color: white;}
+    0%, 49.99% { border-color: purple; }
+    50%, 100% { border-color: white;}
 }
 #frick #special-message {
     padding-top: 10px;
@@ -161,50 +123,41 @@ a:active {color: red;}
     border: 3px solid blue;
     border-radius: 10px;
     margin-left: 0px;   /* default reset to align with above text */
-    width: 340px;
+    width: 305px;
     height: 100px;
     font-size: 15px;
-    display: block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -o-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
 }
-#special-message audio { padding-left: 25px;} 
-#audio-desc { text-align: center;}
+#special-message audio { padding: 0 10px;} 
+#audio-desc { 
+    text-align: left;
+    padding: 5px 15px 0 15px;
+}
 #table-container table { 
     border: 3px solid black; 
     background-color: white;
     box-sizing: border-box;
     width: 100%;
-    padding-right: auto;
     border-radius: 5px;
 }
+#table-container tr, figure {padding: 15px 0;}
 .cell-radius { 
     border-radius: 5px;
     text-align: center;
 }
 #table-container a:hover { background-color: rgba(253, 240, 240, 0.424);} 
 /* A to B instant transform */
-#table-container #glowup:hover img { 
-    -webkit-transform: rotate(-4deg) scale(1.05);
-    -moz-transform: rotate(-4deg) scale(1.05);
-    -o-transform: rotate(-4deg) scale(1.05);
-    transform: rotate(-4deg) scale(1.05);
-}
+#table-container #glowup:hover img { transform: rotate(-4deg) scale(1.05);}
 /* A to B animate transition above */
 #table-container img { 
     background-origin: border-box;
-    -webkit-box-shadow: 6px 6px 5px #666; 
-    -moz-box-shadow: 6px 6px 5px #666;
-    -o-box-shadow: 6px 6px 5px #666;
-    -webkit-transition: -webkit-transform 0.07s ease-out;
-    -moz-transition: -webkit-transform 0.07s ease-out; 
-    -o-transition: -webkit-transform 0.07s ease-out;
     transition: transform 0.07s ease-out;
     box-shadow: 3px 3px 5px #666;
 }
-/* the table should expand when adding characters for each cell. absolutely should not be in block (unless an item has capped width) */
+/* the table should expand when adding characters for each cell. 
+absolutely should not be in block (unless an item has capped width) */
 td, th { border: 2px solid #270ee0;}
 #table-container tr:hover { background-color: rgb(163, 147, 178);}
 #table-container th, #table-container figure { padding-right: 0px;}
@@ -213,12 +166,13 @@ td, th { border: 2px solid #270ee0;}
     max-width: 150%;
     margin-top: -8%;
     margin-left: 50%;
+    z-index: 1;
 }
 /* same idea */
 #surprise img:hover, #surprise img:focus { transform: rotate(-15deg) scale(280);}
 #surprise img { transition: transform 0.05s ease;}
 /* if screen size limits frick container, stack items */
-/* hardest to code. fun fact: this took me a week to figure this out www */
+/* hardest to code. frick is only resizeable -> convert to stacking */
 @media (max-width: 1060px) {
     #container-2 {
         grid-template-columns: 1fr;
@@ -230,40 +184,56 @@ td, th { border: 2px solid #270ee0;}
         flex-direction: column;
     }
     /* the video and figcaption should appear. do not delete this!! */
-    #sidebar video, #sidebar figcaption { display: flex;}
+    #sidebar video, #sidebar figcaption { 
+        display: flex;
+        border-radius: 10px;
+    }
     /* change origin to be top-left of container-2; move to the farthest right side. */
     #sidebar #hidden-video {
+        max-width: 80%;
         position: absolute;
-        right: -10px;
+        right: 20px;
     }
     /* this should not appear when resized */
     #surprise { display: none;}
 }
-/* for firefox */
 @media (max-width: 495px) {
-    /* resize the video and figcaption to their max width to fit the sidebar */
-    #sidebar video, #sidebar figcaption { 
-        max-width: 80%;
-        max-height: 80%;
+    /* i hate that my surprise clips through the rel links. this should not appear. */
+    #sidebar video, #sidebar figcaption { display: none;}
+}
+@media (max-width: 420px) {
+    /* flex container of both sides so no overlaps occur (stays bounded to hr) */
+    #container-2 {
+        display: flex;
+        flex-direction: column;
     }
-    /* move to farthest right side with this sizing. */
-    #sidebar #hidden-video { right: -70px;}
+    /* change the title when resizing. < 400px */
+    #frick h2::before { content: "What's this";}
 }
 
 /* container 3: sections, audio/video, etc. */
-#container-3 { 
-    line-height: 1.25em; 
-    margin-left: 2px;
+#container-3 { line-height: 1.25em;}
+#filian, #streaming, #quote, #facts { 
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 #filian #video-right-side {
     float: right;
     background-color: white;
     border: 2px solid blue;
     border-radius: 10px;
-    margin: -30px 0px -1px 0px;
+    margin: -10px 0px 0px 10px;
     font-size: 15px;
+    padding-top: 0;
 }
-#container-3 #video-desc { padding-left: 10px;}
+#filian video {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#container-3 #video-desc { 
+    padding-left: 10px;
+    margin-bottom: -2vh;
+}
 #container-3 a:link {color: blue;}
 #container-3 a:visited {color: purple;}
 #container-3 a:hover {
@@ -271,8 +241,31 @@ td, th { border: 2px solid #270ee0;}
     color: black;
 }
 #container-3 a:active {color: red;}
+/* layout filian section with video */
+@media (max-width: 420px) {
+    #filian { 
+        display: flex;
+        flex-direction: column;
+    }
+    .filian-title { 
+        position: relative;     /* rank the title as highest (goes first) */
+        bottom: 5vh;            /* section title position */
+    }
+    #filian #video-right-side, .filian-title { padding-top: 5vh;}
+    /* optimize the video layout to fit border 
+    (video format cannot contain border, so ignore that) */
+    #filian #video-right-side, video {
+        width: 100%;    
+        height: auto;   
+        padding-top: 0; /* extra space deleted */
+        margin-left: 0; /* hanging indent. reset left margin to 0px */
+    }
+}
 #container-3 p {line-height: 1.55em; }
-.underline-thickness { position: relative;}
+.underline-thickness { 
+    position: relative;
+    /* z-index: -1; */
+}
 .underline-thickness::after {
     content: "";    /* the underline occurs after the word "FILIAN" */
     position: absolute;
@@ -297,13 +290,18 @@ td, th { border: 2px solid #270ee0;}
     }
 }
 
-/* container 6: copyright info */
-/* no change because of the pre element tag */
-#container-6 { padding-left: 10px;}
-#container-6 a:link { color: blue;}
-#container-6 a:visited { color: rgb(162, 79, 79);}
-#container-6 a:hover { background-color: white;}
-#container-6 a:active { color: red;}
+/* container 6: copyright info, sns links */
+#container-6 { 
+    padding-left: 20px;
+    margin-top: 1vh;
+    font-family: monospace;
+    font-size: 12px;
+}
+/* note: moving the discord logo extends the hover area, please fix that to make it relative. */
+#container-6 img {
+    margin-left: 10px;
+    margin-bottom: -1vh;
+}
 @media (max-width: 1035px) {
     #container-6 { font-size: 12px;}
 }
@@ -314,7 +312,8 @@ td, th { border: 2px solid #270ee0;}
     letter-spacing: 0.11px;
 }
 .awkward-spacing {line-height: 0;}
-/* for each section, upon clicking to a section, scroll to that one. top-scroll offset is 16px due to text cutoff. */
+/* for each section, upon clicking to a section, scroll to that one. 
+top-scroll offset is 16px due to text cutoff. */
 .scroll-to {scroll-margin-top: 16px;}
 .title-underline h2 { text-decoration: underline; }
 .indent p { text-indent: 2em; }
