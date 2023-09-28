@@ -7,44 +7,101 @@
         <link rel="icon" type="image/png" href="../../images/smirk.png">
         <title>Names For Filian</title>
         <style>
-            body { padding: 0 20px;}
-            ol { 
-                margin-left: 60px;
-                font-size: x-large;
+            body { 
+                color: white;
+                padding: 0 20px;
+                background-color: black;
+            }
+            a:visited {color: yellow;}
+            a:active {color: red;}
+            .ordered-list {
+                list-style-type: none;
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                gap: 20px;
+                padding-left: 0px;
+                text-indent: 1em;
+                border-radius: 10px;
+            }
+            .container-1, .container-2, .otherlist-container { 
+                border: 2px solid red;
+                background-color: green;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            .otherlist-container { 
+                display: grid;
+                grid-column: span 2;    /* the second row takes up the whole thing */
+            }
+            @media (max-width: 992px) {
+                .ordered-list {
+                    grid-template-columns: auto;
+                    row-gap: 20px;
+                }
+            }
+            footer {
+                margin-bottom: 20px;
             }
         </style>
     </head>
+    <!-- divide 1-13 & 14-26 into two containers left and right. the bottom shows other nicknames (takes up the webpage) -->
     <body>
         <header><h1>List of Filian Names</h1></header>
         <p>A list of Names for Filian. Here they are in no particular order:</p>
-        <ol>
-            <li>Ailian (愛戀 (àiliàn) - feel depply attached to)*</li>
-            <li>Bilian</li>
-            <li>Cilian (pronounced as silian)</li>
-            <li>Dilian (低廉 (dīlián) - cheap)*</li>
-            <li>Eilian (pronounced as alien)</li>
-            <li>Gilian</li>
-            <li>Hilian</li>
-            <li>Iilian (pronounced as illian)</li>
-            <li>Jilian</li>
-            <li>Kilian</li>
-            <li>Lilian (歷練 (lìliàn) - to learn through experience)*</li>
-            <li>Milian</li>
-            <li>Nilian</li>
-            <li>Oilian (first syllable pronounced as oil)</li>
-            <li>Pilian</li>
-            <li>Qilian (乞憐 (qǐlián) - to beg for pity/to feel sorry for)*</li>
-            <li>Rilian</li>
-            <li>Silian (思戀 (sīliàn) - to long for)*</li>
-            <li>Tilian</li>
-            <li>Uilian (pronounced as weelian)</li>
-            <li>Vilian</li>
-            <li>Wilian</li>
-            <li>Xilian (洗練 (xǐliàn) - agile)*</li>
-            <li>Yilian (依戀 (yīliàn) - to cling to)*</li>
-            <li>Zilian (自戀 (zìliàn) - <span style="color: red;">narcissism</span>)*</li>
-        </ol>
+        <!-- values are hard-coded. this will work for now -->
+        <div class="row-1">
+            <!-- <img src="/images/golfhole.png" alt="" width="100" height="100"> -->
+            <ol class="ordered-list">
+                <div class="container-1">
+                    <li>1. Ailian (愛戀 (àiliàn) - feel depply attached to)*</li>
+                    <li>2. Bilian</li>
+                    <li>3. Cilian (pronounced as silian)</li>
+                    <li>4. Dilian (低廉 (dīlián) - cheap)*</li>
+                    <li>5. Eilian (pronounced as alien)</li>
+                    <li>6. Gilian</li>
+                    <li>7. Hilian</li>
+                    <li>8. Iilian (pronounced as illian)</li>
+                    <li>9. Jilian</li>
+                    <li>10. Kilian</li>
+                    <li>11. Lilian (歷練 (lìliàn) - to learn through experience)*</li>
+                    <li>12. Milian</li>
+                    <li>13. Nilian</li>
+                </div>
+                <div class="container-2">
+                    <li>14. Oilian (first syllable pronounced as oil)</li>
+                    <li>15. Pilian</li>
+                    <li>16. Qilian (乞憐 (qǐlián) - to beg for pity/to feel sorry for)*</li>
+                    <li>17. Rilian</li>
+                    <li>18. Silian (思戀 (sīliàn) - to long for)*</li>
+                    <li>19. Tilian</li>
+                    <li>20. Uilian (pronounced as weelian)</li>
+                    <li>21. Vilian</li>
+                    <li>22. Wilian</li>
+                    <li>23. Xilian (洗練 (xǐliàn) - agile)*</li>
+                    <li>24. Yilian (依戀 (yīliàn) - to cling to)*</li>
+                    <li>25. Zilian (自戀 (zìliàn) - <span style="color: red;">narcissism</span>)*</li>
+                    <li style="color: rgb(255, 136, 255);">26. Fussy Baby</li>
+                </div>
+            </ol>
+        </div>
+        <div class="row-2">
+            <ol class="ordered-list">
+                <div class="otherlist-container">
+                    <li>Filipino Boy</li>
+                    <li>Fillian</li>
+                    <li>ADHD Gremlin</li>
+                    <li>Smacker</li>
+                    <li>HDMI Cable</li>
+                    <li>Tamaya</li>
+                    <li>Class Clown</li>
+                    <li>LewdTuber</li>
+                    <li>2 x 4 plywood cutout</li>
+                </div>
+            </ol>
+        </div>
         <small>*Google Translate is not used.</small><br><hr>
-        <a href="../../index.html">Go back</a>
+        <footer>
+            <a href="../../index.html">Go back</a>
+        </footer>
     </body>
 </html>
