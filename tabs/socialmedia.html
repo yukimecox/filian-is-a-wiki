@@ -11,32 +11,57 @@
                 box-sizing: border-box;
                 padding: 0;
                 margin: 0;
+                line-height: 150%;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
-            section, header, footer { margin: 20px;}
-            p { margin: 20px 20px 20px 40px;}
-            ul { margin-left: 40px;}
+            body {background-color: rgb(166, 202, 233);}
+            .linktree-container {
+                text-align: center;
+                margin: 10px 20px;
+            }
+            /* for all buttons */
+            .all-links {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            /* for each button */
+            .all-links a {
+                background-color: blueviolet;
+                color: white;
+                border-radius: 30px;
+                border: 2px solid orange;
+                text-decoration: none;
+                width: 250px; /* button size */
+                max-width: 100%; /* max button size based on value of width */
+                padding: 15px 0; /* text padding is centered (excludes the outside borders, where it's usually squared) */
+                text-align: center; 
+                box-sizing: border-box;
+            }
+            footer {margin: 20px;}
         </style>
     </head>
 
     <body>
-        <header><h1>Pseudo Linktree</h1></header>
-        <p>This is not a Linktree, but it's just to keep you from using Adblock. Anyway, here are the links:</p>
-
-        <section>
-            <ul>
-                <li><a href="https://twitch.tv/filian" target="_blank">PornHub</a></li>
-                <li><a href="https://youtube.com/@filianIsLost" target="_blank">YouTube</a></li>
-                <li><a href="https://youtube.com/@filianvods" target="_blank">Unofficial VODs (NOT RUN BY FILIAN!!!)</a></li>
-                <li><a href="https://youtube.com/@DailyDoseOfFilianClips" target="_blank">Clips (run by a <b>SMACKER</b>)</a></li>
-                <li><a href="https://twitter.com/filianislost" target="_blank">Toxic</a></li>
-                <li><a href="https://www.tiktok.com/@filianvt" target="_blank">10-Second Attention Span</a></li>
-                <li><a href="https://instagram.com/filian.ttv" target="_blank">The One With The Most Filters</a></li>
-                <li><a href="https://www.reddit.com/r/SnackersHQ/" target="_blank">Does This Still Exist?</a></li>
-                <li><a href="https://discord.com/invite/filian" target="_blank">Down Bad Members (including me)</a></li>
-                <li><a href="https://www.facebook.com/filianvt" target="_blank"><s>Meta</s> <s>Facebook</s> The Boomer Page (login first to join)</a></li>
-            </ul>
-        </section><hr>
-
+        <div class="linktree-container">
+            <header><h1>Pseudo Linktree</h1></header>
+            <p>This is not a Linktree, but it's just to keep you from using Adblock. Anyway, here are the links:</p>
+            <div class="all-links">
+                <a href="https://twitch.tv/filian" target="_blank">PornHub</a>
+                <a href="https://youtube.com/@filianIsLost" target="_blank">YouTube</a>
+                <a href="https://youtube.com/@DailyDoseOfFilianClips" target="_blank">Clips (run by a <span style="font-weight: bold;">SMACKER</span>)</a>
+                <a href="https://youtube.com/@filianvods" target="_blank">Unofficial VODs (NOT RUN BY FILIAN!!!)</a>
+                <a href="https://twitter.com/filianislost" target="_blank">Toxic</a>
+                <a href="https://www.tiktok.com/@filianvt" target="_blank">10-Second Attention Span</a>
+                <a href="https://instagram.com/filian.ttv" target="_blank">The One With The Most Filters</a>
+                <a href="https://www.reddit.com/r/SnackersHQ/" target="_blank">Does This Still Exist?</a>
+                <a href="https://discord.com/invite/filian" target="_blank">Down Bad Members (including me)</a>
+                <a href="https://instagram.com/filian.ttv" target="_blank">The One With The Most Filters</a>
+                <a href="https://www.facebook.com/filianvt" target="_blank"><s>Meta</s> <s>Facebook</s> The Boomer Page (login first to join)</a>
+            </div>
+        </div>
         <footer>
             <a href="../index.html">Back to the article</a>
         </footer>
