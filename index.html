@@ -38,7 +38,7 @@
                                     <li><a href="questions/askme.html">Ask Me Something</a></li>
                                 </ul>
                             </nav>
-                        </div>
+                        </div><hr class="short-line">
                         <div id="table-of-contents">
                             <form>
                                 <nav>
@@ -91,43 +91,47 @@
                 </div>
                 <div id="table-container">
                     <table>
-                        <th class="sans-font cell-radius" style="background-color: white;">Filian</th>
-                        <tr class="cell-radius" style="background-color: white;">
-                            <td class="cell-radius">
-                                <figure>
-                                    <a href="image resolution/anniversary.html" id="glowup">
-                                        <img src="images/filianProfileImg.jpeg" alt="credit">
-                                    </a>
-                                    <figcaption>Fruit Snack Goblin</figcaption>
-                                </figure>
-                            </td>
-                        </tr>
-                        <th class="cell-radius" style="background-color: white;">Basic Info</th>
-                        <tr>
-                            <td class="cell-radius">Name: Filian (He/Him)</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-radius">Born: April, 1986</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-radius">Age: 37 (Same age as <a href="https://twitch.tv/jerma985" target="_blank">Jerma</a>)</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-radius">Height (VR): ~2.5 pens tall (35cm.)</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-radius">Height (IRL): 153cm. (yes, he's <i>this</i> short)</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-radius">Virginity Password: 2632</td>
-                        </tr>
-                        <tr>
-                            <td class="cell-radius">Synonyms: <a href="tabs/synList/filianSyn.html">See Comprehensive List</a></td>
-                        </tr>
-                        <th class="cell-radius" style="background-color: white;">Quote</th>
-                        <tr>
-                            <td class="cell-radius"><i><q>Wha-bam, Wha-zam!</q></i> -Filipino Boy</td>
-                        </tr>
+                        <thead>
+                            <th class="sans-font cell-radius" style="background-color: white;">Filian</th>
+                            <tr class="cell-radius" style="background-color: white;">
+                                <td class="cell-radius">
+                                    <figure>
+                                        <a href="image resolution/anniversary.html" id="glowup">
+                                            <img src="images/filianProfileImg.jpeg" alt="credit">
+                                        </a>
+                                        <figcaption>Fruit Snack Goblin</figcaption>
+                                    </figure>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <th class="cell-radius" style="background-color: white;">Basic Info</th>
+                            <tr>
+                                <td class="cell-radius">Name: Filian (He/Him)</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-radius" id="dob">Born: September 22nd, 1985</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-radius">Age: <span id="age"></span> (Same age as <a href="https://twitch.tv/jerma985" target="_blank">Jerma</a>)</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-radius">Height (VR): ~2.5 pens tall (35cm.)</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-radius">Height (IRL): 153cm. (yes, he's <i>this</i> short)</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-radius">Virginity Password: 2632</td>
+                            </tr>
+                            <tr>
+                                <td class="cell-radius">Synonyms: <a href="tabs/synList/filianSyn.html">See Comprehensive List</a></td>
+                            </tr>
+                            <th class="cell-radius" style="background-color: white;">Quote</th>
+                            <tr>
+                                <td class="cell-radius"><i><q>Wha-bam, Wha-zam!</q></i> -Filipino Boy</td>
+                            </tr>
+                        </tbody>     
                     </table>
                 </div>
                 <div id="surprise">
@@ -331,7 +335,7 @@
 
         <div id="container-6">
             <div class="copyright">
-                <span>Copyright &copy;2023. All Rights Reserved.</span>
+                <span>Copyright &copy;<script>document.write(new Date().getFullYear())</script>. All Rights Reserved.</span>
                 <img src="images/discordIcon.webp" width="20" usemap="#discordlink">
                 <map name="discordlink">
                     <area shape="rect" coords="0,0,20,20" href="https://discordapp.com/users/858915193912164402" target="_blank">
@@ -339,4 +343,30 @@
             </div>
         </div>
     </body>
+    <!-- figure this out later -->
+    <script>
+        function calculateAge(dateOfBirth) {
+            const dob = new Date(dateOfBirth);
+            const now = new Date();
+            const dobYear = dob.getFullYear();
+            const dobMonth = dob.getMonth();
+            const dobDay = dob.getDate();
+            const nowYear = now.getFullYear();
+            const nowMonth = now.getMonth();
+            const nowDay = now.getDate();
+
+            let age = nowYear - dobYear;
+            if (nowMonth < dobMonth || (nowMonth === dobMonth && nowDay < dobDay)) age--;
+            return age;
+        }
+
+        const dobElement = document.getElementById("dob");
+        const ageElement = document.getElementById("age");
+        const dobText = dobElement.textContent;
+        const dobParts = dobText.split(" ");
+        const dobString = dobParts[dobParts.length - 1];
+
+        const age = calculateAge(dobString);
+        ageElement.textContent = age;
+    </script>
 </html>
