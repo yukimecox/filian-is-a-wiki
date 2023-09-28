@@ -7,7 +7,7 @@ document.getElementById("write-something").addEventListener("submit", function(e
 
     // show thank you message
     var container = document.querySelector(".container");   //target only child elements of parent (not descendants for querySelectorAll().)
-    container.innerHTML = "<h2>Thank you, Snacker</h2>";    //append the message
+    container.innerHTML = "<h2>Thank you, Snacker. Your order will be shipped to your current address.</h2>";    //append the message
 
     //create and append the image element
     var image = document.createElement("img");
@@ -20,9 +20,6 @@ document.getElementById("write-something").addEventListener("submit", function(e
     image3.src = "../images/fillyLove.png";
     container.appendChild(image3);
     var spaceImage = [image, image2, image3];           //create image array to space them apart
-    for (var i = 0; i < spaceImage.length; i++) {
-        spaceImage[i].style.marginRight = "25px";       // space each image apart by 25px
-    }
 
     // create a div for the button
     var buttonDiv = document.createElement("div");
