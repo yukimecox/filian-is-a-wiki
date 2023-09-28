@@ -12,11 +12,7 @@ body {
     background-color: rgba(253, 240, 240, 0.836);
     margin: 8px 25px 10px 25px;
 }
-#background-img { 
-    position: relative;
-    /* uncomment this will slightly clip the right side when resized to min-width in firefox */
-    /* overflow: hidden; */
-}
+#background-img {position: relative;}
 #background-img::before {
     content: "";    /* background image appears before everything else above it (relative to z-axis) */   
     background-image: url(../images/fruitSnack.png);
@@ -34,9 +30,9 @@ body {
     /* basically, delete whatever remains of the background img that we have applied to really do anything else */
     pointer-events: none;   
 }
-a:link { color: pink;}
+a:link { color: rgb(255, 183, 195);}
 a:visited { color: rgb(88, 51, 3);}
-a:hover { background-color: aqua;}
+a:hover { background-color: rgb(3, 173, 173);}
 a:active {color: red;}
 
 /* container 1: logo, website name, banner, etc. */
@@ -91,10 +87,10 @@ a:active {color: red;}
     gap: 20px;
 }
 #tabs-container li {
-    line-height: 1.5em;
+    line-height: 1.75em;
     margin-top: -7px;
 }
-#content-list li{ line-height: 1.25em;}
+#content-list li{ line-height: 1.5em;}
 #table-of-contents header { 
     text-decoration: underline;
     padding-bottom: 20px;
@@ -183,6 +179,7 @@ td, th { border: 2px solid #270ee0;}
         display: flex;
         flex-direction: column;
     }
+    .short-line { max-width: 160px;}
     /* the video and figcaption should appear. do not delete this!! */
     #sidebar video, #sidebar figcaption { 
         display: flex;
@@ -229,6 +226,7 @@ td, th { border: 2px solid #270ee0;}
 #filian video {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-bottom: 2px solid blue;
 }
 #container-3 #video-desc { 
     padding-left: 10px;
@@ -262,10 +260,7 @@ td, th { border: 2px solid #270ee0;}
     }
 }
 #container-3 p {line-height: 1.55em; }
-.underline-thickness { 
-    position: relative;
-    /* z-index: -1; */
-}
+.underline-thickness { position: relative;}
 .underline-thickness::after {
     content: "";    /* the underline occurs after the word "FILIAN" */
     position: absolute;
@@ -294,6 +289,7 @@ td, th { border: 2px solid #270ee0;}
 #container-6 { 
     padding-left: 20px;
     margin-top: 1vh;
+    margin-bottom: 5vh;
     font-family: monospace;
     font-size: 12px;
 }
