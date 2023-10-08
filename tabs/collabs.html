@@ -5,9 +5,77 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../images/smirk.png">
-        <title>Collaborations</title>
+        <title>Collaborations *COMING SOON*</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            #container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            #container > * {
+                background-color: aquamarine;
+                padding: 20px;
+                border-radius: 15px;
+                border: 2px solid black;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .link {
+                background-color: rgb(147, 160, 255);
+                border: 2px solid black;
+                border-radius: 15px;
+                text-align: center;
+                padding: 10px 110px;    /* hard-coded to fit the width of text1 and text2 (plus gap) */
+                margin-top: 20px;
+                cursor: pointer;
+            }
+            .link:hover {
+                background-color: rgb(59, 82, 255);
+                color: white;
+            }
+            .link:active {background-color: rgb(255, 66, 66);}
+        </style>
     </head>
     <body>
-        <p>Nothing yet! Check back soon.</p>
+        <div id="background-img">
+            <div id="container">
+                <div class="text1">Nothing yet!</div>
+                <div class="text2">Check back soon.</div>
+            </div>
+        </div>
+        <!-- using the anchor tag won't work (for now at least) -->
+        <button href="../index.html" class="link">Back to the article</button>
+
+        <script>
+            // create a timeline event of all animations. have our duration value be set to 1 by default, unless otherwise indicated
+            const timeline = gsap.timeline({ defaults: { duration: 1 } });
+            // animation order: blank screen -> text1 -> text2 -> link button
+            timeline
+                .from('.text1', { x: '-100vw', y: '100vh', ease: "elastic.out(1, 0.75)" }, '<0.6')
+                .from('.text2', { x: '100vw', y: '100vh', ease: "elastic.out(1, 0.75)" })
+                .fromTo('.link', { opacity: 0 }, { opacity: 1, duration: 2 });
+            
+            // create a button event listener for when we stylize our animations to go to the link.
+            const button = document.querySelector('.link');
+            button.addEventListener('click', () => {
+                timeline.reverse();
+                // wait for the reverse animation to complete. triggers the index page.
+                timeline.eventCallback("onReverseComplete", () => {
+                    window.location.href = "../index.html";
+                });
+            });
+        </script>
     </body>
 </html>
