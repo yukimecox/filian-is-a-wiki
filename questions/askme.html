@@ -3,12 +3,13 @@
     <head>
         <title>Ask Me Something</title>
         <link rel="icon" type="image/png" href="../images/smirk.png">
-        <script src="script.js" defer></script>
+        <script src="../script/script.js" defer></script>
         <style>
             * {
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
+                font-size: 1.15em;
             }
             #background-img {
                 /* center the background img */
@@ -25,7 +26,7 @@
             }
             .container {
                 position: absolute;
-                top: 50%;
+                top: 60%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 background-image: linear-gradient(to bottom right, #f5ebe0, #cfc08D);
@@ -47,6 +48,7 @@
                 display: flex;
                 justify-content: space-evenly;
             }
+            /* #buttons input, textarea { font-size: 0.9em;} */
         </style>
     </head>
     <body>
@@ -56,7 +58,7 @@
             <p>Type anything you want <i>(please read the rules-read-this-junk channel for a proper responce)</i></p>
             <form id="write-something">
                 <label for="comment"></label>
-                <textarea id="comment" rows="8" cols="40" placeholder="numi noomba nya!" required></textarea><br>
+                <textarea id="comment" rows="7" cols="60" placeholder="numi noomba nya!" required></textarea><br>
                 <div id="buttons">
                     <input type="submit" value="click for filian's wisdom tooth!">
                     <input type="reset" value="wait... nvm">
