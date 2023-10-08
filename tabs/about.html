@@ -8,48 +8,113 @@
         <title>About Me</title>
         <style>
             * {
-                box-sizing: border-box;
-                padding: 0;
                 margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                max-width: 100%;
+                max-height: 100%;
             }
-            section, header, footer { margin: 20px;}
-            p { margin: 20px 20px 20px 40px;}
-            figure, .img-vid { 
-                margin: 10px 40px;
-                float: left;
+            #background-img {background-color: rgb(253, 189, 189);}
+            .title {
+                padding: 20px;
+                border-bottom: 2px dashed black;
             }
-            section, footer { clear: both;}
-            footer {
-                text-align: left;
+            .second-row-containers {
+                background-color: rgb(177, 84, 84);
+                margin: 20px;
+                display: grid;
+                grid-auto-flow: column;
+                border: 2px solid black;
+                border-radius: 15px;
+            }
+            .img-vid, .image-caption {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                padding: 10px;
+                max-width: 100%;  
+                height: auto;
+            }
+            .image-caption > img {
+                border: 15px groove black;
+                box-shadow: 5px 5px 8px #000000;
+            }
+            figcaption {padding-top: 15px;}
+            figcaption > img {
+                position: relative;
+                top: 10px;
+                width: 30px;
+            }
+            .description {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 10px 20px;
+                border-left: 2px solid black;
+                font-weight: bold;
+                line-height: 2em;
+            }
+            .footer {
+                border-top: 2px dashed black;
+                padding: 20px 20px;
+            }
+            .footer a {
+                background-color: #dabc94;
+                border: 2px solid black;
+                border-radius: 15px;
+                padding: 5px 20px;
+            }
+            .footer a:link {background-color: rgb(255, 132, 255);}
+            .footer a:visited {background-color: #dabc94;}
+            .footer a:hover {background-color: #fbae49;}
+            .footer a:active {
+                background-color: black;
+                color: white;
+            }
+            .footer p {padding-top: 15px;}
+            @media (max-width: 425px) {
+                .second-row-containers {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    border-radius: 15px;
+                }
+                .img-vid { border-bottom: 2px solid black;}
+                /* the extra left border should not appear */
+                .description {border-left: 0px !important;}
+                .footer {text-align: center;}       /* center all contents of the footer div */
+                .footer a {display: inline-block;}  /* center the button contents as inline-block */
             }
         </style>
     </head>
     <body>
-        <header><h1>About Me</h1></header><hr>
-        <figure class="img-vid">
-            <img src="../images/me.jpeg" alt="" width="186px" height="232px">
-            <figcaption><i>Oh no. I've been doxxed XD.</i></figcaption>
-        </figure>
-        <!-- <figure class="img-vid">
-            <img src="../images/me.jpeg" alt="" width="186px" height="232px">
-            <figcaption><i>Oh no. I've been doxxed XD.</i></figcaption>
-        </figure> -->
-        <section>
-            <p>Hi. My name is Yuki (yukimecoc#6863) and I made this website.<br>
-            I am majoring in CS in some college, though I don't know which CS field specifically.<br> 
-            I've never coded a website before and this is my excuse to learn it whilst having a mental breakdown haha.<br>
-            Any suggestions appreciated (like how to make this website look cleaner and nicer).<br><br>
-            Also, this is the first time in my life I'll be involved in the Snacker&reg; community, so please request any feedback about my performance.<br>
-            DM me or whatever if you have any concerns. You can find it somewhere on 
-            <a href="https://discordapp.com/users/858915193912164402" target="_blank">discord</a>.</p>
-        </section>
-        <figure>
-            <img src="../images/fillyMeltdown.webp" alt="">
-            <figcaption><i>blelelelelele</i></figcaption>
-        </figure>
-        <footer><hr>
-            <a href="../index.html">Back to the Article</a><br>
-            <small>Thank you brat for this inspiration to make this website. You are awesome.</small>
-        </footer>
+        <main id="background-img">
+            <div class="title">
+                <h1>About Me</h1>
+            </div>
+            <div class="second-row-containers">
+                <div class="img-vid">
+                    <figure class="image-caption">
+                        <img src="../images/me.jpeg">
+                        <figcaption style="font-style: italic;">Oh no. I've been doxxed XD. <img src="../images/fillyMeltdown.webp" alt=""></figcaption>
+                    </figure>
+                </div>
+                <div class="description">
+                    <p>Hi. My name is Yuki (yukimecoc#6863) and I made this website.
+                        I am majoring in CS in some college, though I don't know which CS field specifically. 
+                        I've never coded a website before and this is my excuse to learn it whilst having a mental breakdown haha.
+                        Any suggestions appreciated (like how to make this website look cleaner and nicer).
+                        Also, this is the first time in my life I'll be involved in the Snacker&reg; community, so please request any feedback about my performance.
+                        DM me or whatever if you have any concerns. You can find it somewhere on 
+                        <a href="https://discordapp.com/users/858915193912164402" target="_blank">discord</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="footer">
+                <a href="../index.html">Back to the Article</a><br>
+                <p>**Thank you brat for this inspiration to make this website. You are awesome.**</p>
+            </div>
+        </main>
     </body>
 </html>
