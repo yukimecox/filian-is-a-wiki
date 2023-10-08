@@ -180,10 +180,15 @@ td, th { border: 2px solid #270ee0;}
         flex-direction: column;
     }
     .short-line { max-width: 160px;}
+    #sidebar video {
+        border: 2px solid yellow;
+        margin-bottom: 20px;
+    }
     /* the video and figcaption should appear. do not delete this!! */
     #sidebar video, #sidebar figcaption { 
         display: flex;
         border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
     }
     /* change origin to be top-left of container-2; move to the farthest right side. */
     #sidebar #hidden-video {
@@ -194,7 +199,7 @@ td, th { border: 2px solid #270ee0;}
     /* this should not appear when resized */
     #surprise { display: none;}
 }
-@media (max-width: 495px) {
+@media (max-width: 515px) {
     /* i hate that my surprise clips through the rel links. this should not appear. */
     #sidebar video, #sidebar figcaption { display: none;}
 }
@@ -230,7 +235,7 @@ td, th { border: 2px solid #270ee0;}
 }
 #container-3 #video-desc { 
     padding-left: 10px;
-    margin-bottom: -2vh;
+    margin-bottom: 0px;
 }
 #container-3 a:link {color: blue;}
 #container-3 a:visited {color: purple;}
