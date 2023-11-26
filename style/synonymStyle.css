@@ -1,0 +1,33 @@
+body { 
+    color: white;
+    padding: 0 20px;
+    background-color: black;
+}
+a:visited {color: yellow;}
+a:active {color: red;}
+.ordered-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+    padding-left: 0px;
+    text-indent: 1em;
+    border-radius: 10px;
+}
+.container-1, .container-2, .otherlist-container { 
+    border: 2px solid red;
+    background-color: green;
+    border-radius: 10px;
+    padding: 20px;
+}
+.otherlist-container { 
+    display: grid;
+    grid-column: span 2;    /* the second row takes up the whole thing */
+}
+@media (max-width: 992px) {
+    .ordered-list {
+        grid-template-columns: auto;
+        row-gap: 20px;
+    }
+}
+footer {margin-bottom: 20px;}

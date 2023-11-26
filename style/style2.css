@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@500&display=swap');
 /* the whole website */
 * {
     box-sizing: border-box;
@@ -276,49 +275,71 @@ td, th { border: 2px solid #270ee0;}
     height: 3px; /* how thick should the underline be */
     background-color: black; /* underline color */
 }
+#quote ul { font-weight: bold;}
 #quote ul a { text-decoration: none;}
 #quote ul, #facts ul { 
     list-style-type: none;
     margin-left: 50px;
 }
-#box-of-quotes-container, #box-of-facts-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin: 30px 10px;
-    font-family: 'Grandstander', cursive;  
+#box-of-quotes-container {
+    margin-bottom: 30px;
 }
-.quote-container, .fact-container {
-    border: 2px solid black;
+
+.quote-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.quote-container .saying {
+    border: 3px solid #f97777;
+    padding: 20px; /* Adjust the padding as needed */
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    font-weight: 700;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-style: italic;
+    max-height: 100px; /* Set a maximum height for each saying */
     display: flex;
     flex-direction: column;
-    font-size: 18px;
-    border-radius: 10px;
-}
-.quote-container .saying {background-color: #a998e8;}
-.quote-container .saying:hover {background-color: #fcfcfc;}
-.saying, .fact {
-    display: flex;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    background-color: rgb(226, 226, 226);
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
 }
-/* alternate rows that applies to each container for that row */
-.quote-container:nth-child(even) .saying:nth-child(n) {background-color: #ffdbdb;}
-.quote-container:nth-child(even) .saying:nth-child(n):hover {background-color: white;}
+
+/* add quotes to each text */
+.saying::before {content: open-quote;}
+.saying::after {content: close-quote;}
+
+/* alternate rows that apply to each container for that row */
+.quote-container:nth-child(even) .saying:nth-child(n) {
+    background-color: #ffdbdb;
+    margin: 10px 25px;
+}
+
 @media (max-width: 426px) {
-    .quote-container .saying {background-color: white;}
+    .quote-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .quote-container .saying {
+        background-color: white;
+        padding: 20px; /* Adjust the padding as needed */
+        max-height: 100px; /* Set a maximum height for each saying */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .quote-container:nth-child(even) .saying:nth-child(n){
         margin: 0;
         background-color: white;
     }
 }
-.fact > .voice-act {display: contents;}
+
+.list-hover { line-height: 1.75em;}
 @media (max-width: 1035px) {
     .list-hover {
         line-height: 170%;

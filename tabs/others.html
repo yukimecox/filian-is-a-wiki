@@ -5,100 +5,43 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../images/smirk.png">
+        <link rel="stylesheet" href="/style/othersStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"></script>
         <title>Others</title>
-        <!-- margin: auto; can you use that somewhere? -->
-        <!-- basic style done! add fonts later (stylize it a bit more) -->
-        <style>
-            * {
-                box-sizing: border-box;
-                padding: 0;
-                margin: 0;
-                max-width: 100%;
-                max-height: 100%;
-            }
-            html {background-color: black;}
-            .top-tab {
-                margin: 10px;
-                padding: 5px 0;
-                border: 2px solid black;
-                text-align: center;
-                font-size: 2em;
-                font-weight: bold;
-            }
-            .top-tab, .left-container, .right-container, .article-link {
-                background-color: white;
-                border-radius: 15px;
-            }
-            .second-row-container {
-                display: grid;
-                grid-auto-flow: column;
-            }
-            .second-row-container, .left-container, .right-container {
-                border: 2px solid black;
-                margin: 10px;
-                text-align: center;
-                align-items: center;
-                line-height: 1.5em;
-            }
-            .others-section, .what-is-it {
-                border: 2px solid black;
-                padding: 50px 20px;
-            }
-            .list-all {
-                list-style-type: none;
-                text-align: left;
-                padding: 10px 20px;
-            }
-            .article-link {
-                border: 2px solid black;
-                margin: 20px;
-                padding: 10px;
-            }
-            .article-link a:link {color: blue;}
-            .article-link a:visited {color: purple;}
-            .article-link a:hover {color: red}
-            .article-link a:active {color: green;}
-        </style>
     </head>
 
     <body>
-        <main id="background-img">
-            <div class="container">
-                <div class="top-tab">
-                    <p>Tabs go here</p>
+        <main id="the-whole-thing">
+            <div class="header">
+                <div class="left-header">
+                    <a href="../index.html" id="animate"><i class="fa-solid fa-arrow-left fa-2x"></i></a>
                 </div>
-                <div class="second-row-container">
-                    <div class="left-container">
-                        <div class="others-section">
-                            <h1>Others</h1>
-                        </div>
-                        <div class="what-is-it">
-                            <p>These links don't have anything yet. Check back later or stay tuned for updates in the 
-                                <a href="logs/logs.html">Update Logs</a>:
-                            </p>
-                        </div>
-                    </div>
-                    <div class="right-container">
-                        <ul class="list-all">
-                            <li id="is-mistake"><a href="https://www.youtube.com/watch?v=L2bq4eD3y_U&t=4s" target="_blank">R34</a></li>
-                            <li><a href="artwork.html">Artwork</a></li>
-                            <li><a href="collabs.html">Collaborations</a></li>
-                            <li><a href="comingsoon.html">Coming Soon</a></li>
-                        </ul>
-                    </div>
+                <div class="right-header">
+                    <h1>Others</h1>
                 </div>
-                <div class="article-link">
-                    <a href="../index.html">Back to the article</a>
-                </div>
+            </div>
+            <div class="filian-image">
+                <h3>*These links don't have anything yet. Check back later or stay tuned for updates in the 
+                    <a href="logs/logs.html">Update Logs</a>*
+                </h3>
+                <div class="credit">Credit: <a href="/images/filianBlanketTweet.png">@RawshawDark</a></div>
+            </div>
+            <div class="tabs">
+                <div class="tab" id="is-mistake"><a href="https://www.youtube.com/watch?v=L2bq4eD3y_U&t=4s" target="_blank">R34</a></div>
+                <div class="tab"><a href="artwork.html">Artwork</a></div>
+                <div class="tab"><a href="collabs.html">Collaborations</a></div>
+                <div class="tab"><a href="comingsoon.html">Coming Soon</a></div>
             </div>
         </main>
 
         <script>
             var isDecisionBad = document.getElementById("is-mistake");
-            isDecisionBad.addEventListener("click", function(event) {
+            isDecisionBad.addEventListener("click", function (event) {
                 var isDecisionBad = confirm("Are you sure?");
-                if (isDecisionBad) { window.open(event.target.href, '_blank');}
-                else { event.preventDefault();} 
+                if (isDecisionBad) { window.open(event.target.href, '_blank'); }
+                else { event.preventDefault(); }
             });
         </script>
     </body>

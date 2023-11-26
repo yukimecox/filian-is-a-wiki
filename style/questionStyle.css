@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    background: url("/images/gilian-background.png");
+    background-size: cover;
+    background-position: 50%;   /* when dynamically resizing, gilian will always be centered and not moving away */
+}
+.form {
+    background-image: linear-gradient(to bottom right, #f5ebe0, #cfc08D);
+    padding: 20px;  /* have the form itself be bigger */
+    border: 3px solid black;
+    margin: 10px;   /* give the form some breathing room when zooming in */
+    border-radius: 10px;
+}
+h2, h4, .comment, p {margin-bottom: 10px;}
+.comment {
+    display: block; /* any elements below .comments will behave in block styling, moving them to newline*/
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box; /* the ratios of textbox and the width of buttons are the same */
+    font-size: 15px;
+    resize: none;
+    border-radius: 0.25rem;
+    padding: 3px 6px;
+}
+.btn, .go-back {
+    border: none;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    width: 100%;
+    padding: 5px;
+    margin-top: 8px;
+    font-weight: 700;
+    border-radius: 0.25rem;
+    font-size: 16px;
+}
+p {font-weight: 700;}
+.btn:hover:nth-child(2n) {background-color: blue;}
+.btn:hover:nth-child(2n+1) {background-color: red;}
+.go-back:hover {background-color: purple;}
+/* a class of hidden hides content. use js to have it appear when we submit the form */
+.hidden {display: none;}

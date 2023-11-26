@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#the-whole-thing {background-color: rgb(132, 175, 218);}
+.header {
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding: 0 1rem;
+    font-family: 'Bungee Spice', sans-serif;
+    font-size: 12px;
+}
+.left-header i, .left-header h1 {display: inline-block;}
+.filian-image {
+    background-image: url(/images/filianBlanket.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 45%;
+    display: grid;
+    justify-content: right;
+    height: 448px;
+    align-items: center;
+    border-bottom: 2px solid black;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.credit {
+    position: relative;
+    top: 40px;
+    background-color: rgb(0, 170, 255);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 5px;
+}
+.filian-image h3 {
+    width: 200px;
+    font-size: 1.7rem;
+    padding-right: 10px;
+    background-color: rgb(187, 187, 187);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 5px;
+}
+.filian-image h3, a {text-decoration: none;}
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    margin: 30px 0 0 0;
+    padding: 0 10% 30px 10%;
+    gap: 30px;
+    font-size: 30px;
+    font-family: 'Grandstander', cursive;  
+}
+.tab {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    align-items: center;
+    border-radius: 12px;
+}
+.tab > a {
+    border: 2px solid blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: rgb(255, 146, 146);
+}
+.tab > a:hover {filter: brightness(0.9);}
+.tab > a:active {background-color: antiquewhite;}

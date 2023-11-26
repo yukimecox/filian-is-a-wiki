@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+#background-img {background-color: rgb(253, 189, 189);}
+.title {
+    padding: 20px;
+    border-bottom: 2px dashed black;
+}
+.second-row-containers {
+    background-color: rgb(177, 84, 84);
+    margin: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.img-vid, .image-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;  
+    height: auto;
+}
+.image-caption > img {
+    border: 15px groove black;
+    box-shadow: 5px 5px 8px #000000;
+}
+figcaption {padding-top: 15px;}
+figcaption > img {
+    position: relative;
+    top: 10px;
+    width: 30px;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 20px;
+    border-left: 2px solid black;
+    font-weight: bold;
+    line-height: 2em;
+}
+.footer {
+    border-top: 2px dashed black;
+    padding: 20px 20px;
+}
+.footer a {
+    background-color: #dabc94;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px 20px;
+}
+.footer a:link {background-color: rgb(255, 132, 255);}
+.footer a:visited {background-color: #dabc94;}
+.footer a:hover {background-color: #fbae49;}
+.footer a:active {
+    background-color: black;
+    color: white;
+}
+.footer p {padding-top: 15px;}
+@media (max-width: 425px) {
+    .second-row-containers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 15px;
+    }
+    .img-vid { border-bottom: 2px solid black;}
+    /* the extra left border should not appear */
+    .description {border-left: 0px !important;}
+    .footer {text-align: center;}       /* center all contents of the footer div */
+    .footer a {display: inline-block;}  /* center the button contents as inline-block */
+}
