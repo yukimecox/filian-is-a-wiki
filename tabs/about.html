@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../images/smirk.png">
         <link rel="stylesheet" href="/style/aboutStyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>About Me</title>
     </head>
     <body>
@@ -16,25 +17,43 @@
             <div class="second-row-containers">
                 <div class="img-vid">
                     <figure class="image-caption">
-                        <img src="../images/me.jpeg">
+                        <img src="../images/me.jpeg" width="310">
                         <figcaption style="font-style: italic;">Oh no. I've been doxxed XD. <img src="../images/fillyMeltdown.webp" alt=""></figcaption>
                     </figure>
                 </div>
                 <div class="description">
-                    <p>Hi. My name is Yuki (yukimecoc#6863) and I made this website.
-                        I am majoring in CS in some college, though I don't know which CS field specifically. 
-                        I've never coded a website before and this is my excuse to learn it whilst having a mental breakdown haha.
-                        Any suggestions appreciated (like how to make this website look cleaner and nicer).
-                        Also, this is the first time in my life I'll be involved in the Snacker&reg; community, so please request any feedback about my performance.
-                        DM me or whatever if you have any concerns. You can find it somewhere on 
-                        <a href="https://discordapp.com/users/858915193912164402" target="_blank">discord</a>.
-                    </p>
+                    <i id="click-button" class="fa-regular fa-circle-play fa-1x" title="Play description!"></i>
                 </div>
             </div>
             <div class="footer">
-                <a href="../index.html">Back to the Article</a><br>
-                <p>**Thank you brat for this inspiration to make this website. You are awesome.**</p>
+                <a href="../index.html">Back to the Article</a>
+                <a href="https://discordapp.com/users/858915193912164402" target="_blank">Discord</a><br>
+                <p>**Thank you brat for this inspiration to make this website. You are awesome.**</p><br><br><br>
+                <span>Copyright &copy;2023-<script>document.write(new Date().getFullYear())</script>. All Rights Reserved.</span>
             </div>
         </main>
+        <script>
+            var button = document.getElementById("click-button");
+            const div = document.querySelector(".description");
+
+            // click the button to generate the about desctiption
+            button.addEventListener("click", function() {
+                if (button.style.display = "block") button.style.display = "none";
+                // recurse this function to display text per character [0, text.length)
+                function textTypingEffect(text, i = 0) {
+                    if (i === 0) div.textContent = "";      // avoids request to call function (will clear text in console)
+                    div.textContent += text[i];             // append each character to div
+
+                    if (i === (text.length - 1)) return;    
+                    setTimeout(() => textTypingEffect(text, i + 1), 10);    // display how fast you want the function to call each successive character
+                }
+
+                // basically grabs information for about.txt and processes it to the website, includes basic file handling
+                fetch('/notes/about.txt')
+                    .then(response => response.text())
+                    .then(data => {textTypingEffect(data)})
+                    .catch(error => {console.error('Error fetching the file: ', error);});
+                });
+        </script>
     </body>
 </html>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@500&display=swap');
 body {
     padding: 0 30px 20px 30px;
     background-color: rgb(169, 183, 232);
@@ -12,9 +13,11 @@ body {
 .grey-date {color: #A8A8A8;}
 .indent-left {margin: 20px 20px;}
 .space-lines {line-height: 150%;}
-.important-thing {
+.important-thing, .important-thing-2 {
     color: rgb(217, 24, 217);
     font-weight: 700;
     font-style: oblique;
 }
+.important-thing-2 {color: rgb(0, 167, 2245);}
 .emphasis {font-style: italic;}
+.text-2 {font-family: 'Grandstander', cursive;}

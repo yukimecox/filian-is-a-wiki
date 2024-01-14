@@ -1,4 +1,3 @@
-<!-- u found the source code bro D: -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,95 +7,771 @@
         <link rel="icon" type="image/png" href="images/smirk.png">
         <link rel="stylesheet" href="style/style.css">
         <script src="../script/age.js" defer></script>
+        <script src="../script/dropdown.js" defer></script>
+        <script src="../script/playAudio.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="../script/hoverFade.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
-
     <body>
-        <div id="container-1" class="awkward-spacing">
-            <div class="box-1">
-                <!-- original dimesions: 900 x 900 -->
-                <img id="logo" src="images/filianProfile.jpeg" alt="Filian Profile Picture">
-                <h1>FilianWiki</h1>
+        <main>
+            <div class="banner">
+                <img id="logo" src="images/filianProfile.jpeg" alt="logo">
+                <i id="bars" class="fa-solid fa-bars fa-2x"></i>
             </div>
-            <div class="box-2"> 
-                <!-- original dimensions: 1127 × 386 -->
-                <!-- when resizing, the dimensions are the same at this rate. -->
-                <img src="images/banner.png" alt="Filian Banner" width="380">
-            </div>
-        </div><hr>
-
-        <main id="background-img">
-            <div id="container-2">
-                <div id="sidebar">
-                    <div id="content-links">
-                        <div id="tabs-container">
-                            <nav>
-                                <ul>
-                                    <li><a href="tabs/socialmedia.html">Follow Filian On</a></li>
-                                    <li><a href="tabs/logs/logs.html">Update Logs</a></li>
-                                    <li><a href="tabs/others.html">Others</a></li>
-                                    <li><a href="tabs/faq/faq.html">FAQ</a></li>
-                                    <li><a href="tabs/about.html">About Me</a></li>
-                                    <li><a href="questions/askme.html">Ask Me Something</a></li>
-                                </ul>
-                            </nav>
-                        </div><hr class="short-line">
-                        <div id="table-of-contents">
-                            <form>
-                                <nav>
-                                    <header>Table Of Contents:</header>
-                                    <ul id="content-list">
-                                        <li><a href="#frick">What The Frick Is This?</a></li>
-                                        <li><a href="#filian">Filian</a></li>
-                                        <li><a href="#streaming">Streaming Career</a></li>
-                                        <li><a href="#quote">Quoth The Filian</a></li>
-                                        <li><a href="#facts">Factoids</a></li>
-                                    </ul>
-                                </nav>
-                            </form>
-                        </div>
-                    </div>
-                    <div id="hidden-video">
-                        <figure style="font-family: arial;">
-                            <video width="240" height="180" poster="images/yellowwelchs.webp" controls>
-                                <source src="videos/rickroll.mp4" type="video/mp4">
-                                <source src="videos/rickroll.webm" type="video/webm">
-                                Your browser does not support the video tag.
-                            </video>
-                            <figcaption id="video-desc">Click Here</figcaption>
-                        </figure>
+            <div class="containers">
+                <div class="left-container">
+                    <div class="content-links">
+                        <a class="tab-1" href="tabs/vtawards.html">VTuber Awards</a>
+                        <a class="tab-2" href="tabs/socialmedia.html">Follow Filian On</a>
+                        <a class="tab-3" href="tabs/logs/logs.html">Update Logs</a>
+                        <a class="tab-4" href="tabs/others.html">Others</a>
+                        <a class="tab-5" href="questions/askme.html">Ask Me Something</a>
+                        <a class="tab-6" href="tabs/faq/faq.html">FAQ</a>
+                        <a class="tab-7" href="tabs/about.html">About Me</a>
+                        <hr>
+                        <nav class="content-list">
+                            <ul>
+                                <li><a href="#frick">What The Frick Is This?</a></li>
+                                <li><a href="#filian">Filian</a></li>
+                                <li><a href="#streaming">Streaming Career</a></li>
+                                <li><a href="#quote">Quoth The Filian</a></li>
+                                <li><a href="#facts">Factoids</a></li>
+                                <li><a href="#img-vid">Gallery</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-                <div id="message-board">
-                    <section id="frick" class="sans-font scroll-to title-underline indent">
-                        <h2 class="awkward-spacing">?</h2>
-                        <p style="color: white;">Yes. It's real.</p>
-                        <p>I made this website made for the Filian community that took 3 months to make and I can't be
-                            very thankful for those involved. Maybe this is the first time you're seeing this, and that it's a 
-                            wiki about Filian, right? Well, not really. Did you know that everybody who reads a Wiki article 
-                            gloss over 99% of filler information than what was actually said? Could it be something I made up? 
-                            Idk. The average time I spent reading a Wiki is like 10 seconds, but that depends on how desperate 
-                            you are. I should note that despite the vast amounts of clips of Filian in the media, I can't guarantee
-                            that any of these are factual (according to my memory). It's all just for shits and giggles. I hope you
-                            believe in me. Tired of reading things I "said" in the Wiki? Click some links in the sidebar to explore. 
-                            I hope you have a good day. Did I mention that I had an average of 3 hours sleep getting this website 
-                            done on a deadline?
-                        </p>
-                        <figure style="font-family: arial;" id="special-message">
-                            <audio controls preload="auto">
-                                <source src="videos/specialmessage.mp3" type="audio/mp3">
-                                <source src="videos/specialmessage.ogg" type="audio/ogg">
-                            </audio>
-                            <figcaption id="audio-desc">Definitely not cringe message 🤭</figcaption>
-                        </figure>
-                    </section>
+                <div class="middle-container">
+                    <div class="message-container">
+                        <section id="frick" class="indent">
+                            <h2 class="awkward-spacing">?</h2>
+                            <p style="color: white;">Yes. It's real.</p>
+                            <p>If you're confused about this website, the FAQ should help you answer some of your questions. We're here
+                                to have fun, not hate each other! Oh yeah, the audio message below should explain why I made this website
+                                in the first place:
+                            </p>
+                            <figure id="special-message">
+                                <audio controls preload="auto">
+                                    <source src="videos/specialmessage.mp3" type="audio/mp3">
+                                    <source src="videos/specialmessage.ogg" type="audio/ogg">
+                                </audio>
+                                <figcaption id="audio-desc">Definitely not cringe message 🤭</figcaption>
+                            </figure>
+                        </section>
+                    </div>
+                    <div class="article-container">
+                        <h2 class="title-underline">Filian</h2>
+                        <section id="filian" class="indent">
+                            <p>Who the fuck is Filian? Why does she sound like a prepubescent boy who barely made it through
+                            adulthood? Who let that cringe kid get a career as a streamer? 
+                            <span style="text-transform: uppercase;">when will she ever debut???</span>
+                            </p>
+                            <p>If you have wondered for a long time why we let her be who she is, this was something I want to
+                                write about since creating this website. After all, what's a Filian without even mentioning
+                                who she is. In essence, Filian (perceived as 
+                                <a href="/images/rachel-explained.png" target="_blank" title="IT'S A JOKE! STOP ASKING ME IF IT'S HER REAL NAME!!!">"Rachel"</a>, 
+                                if smackers take this information too seriously) 
+                                is a catgirl on the internet who does weird things. Known for doing physical gymnastics,
+                                flashbangs, edgy jokes, and that one time she's homeless, suddenly became who she is today.
+                                My first taste on Filian came about in late April 2022 when she did a short from a Beat Saber stream
+                                in 2021 I found in my recommend feed before YouTube segregated them as a tab. Very much it was her
+                                saying the along the lines of, "No real fruit! No Mott's! No preservatives! No originals! Only Welch's!"
+                                That triggered something in my brain that made me tickle inside that springs ADHD in both of us,
+                                which I'd say never happened in many years. This not only changed my perspective on VTubers as
+                                a platform of content, but as a personal gratitude I think many people will come to love.
+                                She's definitely what you call a "smacker", and I would admit I'm not one of them, thank god!
+                                Through many personal hardships I had since childhood, there was finally solice that I could
+                                turn to if I ever feel there's something wrong with me, especially during university. No one 
+                                else does this but her, and there's so much creativity that just feels different from many
+                                other content creators. Not saying I don't like them, but her own fundamental capabilities to
+                                go so far into interacting with them is just mind-blowing without further context, which I couldn't
+                                provide because I'm so sleep deprived writing this. Basically, her aspirations to do streaming and
+                                that she says she'll stream more in the future makes me want to commit to more of her streams.
+                                If you could handle this level of ADHD and keep up with the edgy jokes she remarks every second,
+                                I'm sure you'll enjoy the streams as much as we do.
+                            </p>
+                        </section><hr>
+                        <h2 class="title-underline-header">Streaming Career</h2>
+                        <section id="streaming" class="indent">
+                            <p>Now that we have that out of the way, I'm sure you're more interested in the lore behind Filian.
+                                Did she hail from outer space and crash-landed on Earth to stream? Did she come out of the factories
+                                of China and shipped to the US so she could be an extravagent streamer? Or, and this is the best
+                                one I've got, was she a furry from years past, and now streams without ever telling us she's one 
+                                of them? Knowing their history, I'm pretty sure it was stemmed from one of those possibilities. But 
+                                what I could say here is that all these things I just mentioned connect to one game: VRChat. Yes, 
+                                this was what started her career in the VTubing scene, and it was April 2021 that launched herself 
+                                in this game. But wait a minute! I'm wrong about this date being her official debut (no relation).
+                                She actually told this story before that her personal addiction to VRChat started during the onset
+                                of the COVID-19 Pandemic in early 2020. Now we can confirm that she was still in her furry self before
+                                she started streaming, but gradually became her "all-time favourite game ever!" (although I'll point
+                                out that there was another game she played before this, and there's a clip from it I found a good while
+                                ago of her playing it, but that's another story).
+                            </p>
+                            <p>Anyway, since becoming a VTuber, Filian quickly found many intuitive ways to makes her streams more
+                                enjoyable that had us vibrating our chairs intensely. Besides
+                                screaming into the mic every 5 minutes, she does collabs with other VTubers. Examples include:
+                                AkumaNihmune, CottontaleVA, Shylily, baoo, Camila, ProjektMelody, Yuzu, LucyPyre, Saruei, Pippa, 
+                                Trickywi, and other larger, more personal creators. I don't know why Filian had to pick them out of the many
+                                others she could've collaborated with, but take this with a grain of salt if you can to save yourself.
+                                She also does You Laugh, You Lose streams every Saturday, but that could change if she decides to
+                                be weird about it. There are also some things she also can do, such as rizzing up Snackers at level 
+                                uncomparable to the delight of famous TikTok celebrities of today. She could also give advice that 
+                                could definitely help people find someone they could love and have relationships with (at least I 
+                                don't fall in line to this behaviour, but it's at least funny to think about). There are many more 
+                                things that I could come up with that makes Filian a speical place in my heart as a non-parasocial 
+                                Snacker and it would probably take up like 50% of the Wiki if I keep going with this, so I'll leave
+                                you to discover other contents yourselves. 
+                            </p>
+                            <p>Oh yeah, I forgot to mention that she did the VTuber Awards. That's next!</p>
+                        </section><hr>
+                        <h2 class="title-underline-header">Quoth The Filian</h2>
+                        <section id="quote" class="indent">
+                            <p>
+                                Some say it was just a fluke. Others say it's so bad you really thought she actually said this.
+                                And according to my sources, it's very much true down to the character. I wouldn't bother writing
+                                the quotes exactly, but these are close enough. After you've finished reading them, I want you to feel
+                                like you're actually Filian and stream like this. Oh yeah, someone once did commands for quotes, so it
+                                looks like I'll be the one responsible for quoting Filian from now on. Plus, these are never-before seen 
+                                quotes that aren't on the commands list. Hope this is still accurate.
+                            </p>
+                            <div id="box-of-quotes-container">
+                                <div class="quote-container">
+                                    <div class="saying">a42 b. lu768. asi-81</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">1 to get ur dna and clone u</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">rg ji;o jkl ulodcvdsf hklrg rhkl hkl hkl uildfd hkl ghiluur</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I got my hotdog stuck in the pencil sharpener</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">asdfadrgth</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">danger's my business and business.. is good</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">If I can't see it, it can't hurt me</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I have a feeling this isn't gonna be fun</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">The cable is flossing me</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm a coconut fillyPepega Clap</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">wam bam shangalang</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">It looks like I have cancer in my crotch</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i talk about tits and make terrible jokes</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">So today we're gonna hang out on horror night with Saruei.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">stop quoting everything I say</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">My mom shoulda pulled out</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm hard</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm not Filipino, Neuro-sama.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">That's not the only thing that's thick - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">What's in your pants? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Better to sail the seven seas, than to catch STDs. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm gonna lobotomize mytself. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Drake Can you do something for me. - filian 2022</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">What is a matting press? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Frick these fricks - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">If i was in the WWE, my name would be "The Penetrator" - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">*drumroll* Fuck.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">He put the it in the shit-- (realisation) AAAAA!</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Flip, bitch?</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Where are we? Are we in Lugia's stomach? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Hey it's not so bad, at least we got screwed. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Alright, well, who wants to get vored? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Everyone's too busy watching... futa... or something - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm gay for my water bottle.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">*tests how flat she is* I'M FLATTER THAN MY MODEL!!!!!!!</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm a virgin.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Shidding farding, shidding farding.... -my banner</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I have a large PP, and I can't help it.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">This is Bear Grylls, and you're watching Jackass. Let's get it.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Filian, do a Dommy-Mommy voice. GO TO YOUR ROOM. EAT YOUR VEGETABLES. BECOME A DOCTOR.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Now that I'm gone, I guess I'll insert myself in the microwave in the hopes that I'll evolve to be a fruit snacc.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">내눈속에비친 arrow SSsqwn vri8q3igehuis2  owj rhy3qne892 vg817. &lt;-- demonic noises</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">oh god L must 6e tired. myh2nd wr:tin9 is f2llin9 off 2 cLiff :&#40;</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">In 2 quirky qu2rtet, friends unite Drumsy, the punny chicken, t2kes fLi9ht Emi's d2rk cocks, fr2me her doomer 9r2Le While Moxie struts his femboy embr2f 2midst it 2LL, fili2n the short st2ck c2uses ch2os, with endLess Lrun9e for ch2t</i></q> -The 4 Idiots</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i'm a normal functioning adult. - Fussy Baby</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i'm below average, it's so average.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i am an idiot!</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">is that grass? -to Layna</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">marmite is not that bad.</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">What, am I an egirl now? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Chat, is this how men get pregnant? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Chat, should I eat my wisdom teeth? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Spongebob is a lot hotter than me. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm the meat doctor. - Layna 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Layna, what colour are my balls? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm an american; I'm double fisting burgers. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">batman w/o ears looks like a tictac - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">There is a pokemon in yugioh called "Winged Furry". - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">"Let me see the D, let me see the D!" - to Rekson</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Is poop vegan? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Frick, I dropped my hips. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm a cat. It's my job to laugh at dogs suffering. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I just vomited thick water across my floor. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Am I the pervert? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Don't quote me on that. - Luong 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">The only time tuna is good, is when it's your girlfriend. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">And their fans are just as hard. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Does anyone ever say rub me right? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Fifdeez nuts. GotEEM - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">When in doubt, chat: war crimes. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">people like vaporeon more than me. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i think body pillows should have more rights than me. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">yea!! they had sex...ur buttcheek's good? - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">time to have cybersex with my cyberwife. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i'm probably 9 to 11 on plane crashes. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">mwah! - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">the backside is more grippable. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">alright let me just fart in my face real quick. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">do you bring spit in the tsa? - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">i scream during sex! - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">the first divides into the head, and the second divides into the tits.  - filian 2024 (on mitosis)</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">"i'm coming" - layna 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I can't afford to wear pants chat, they make me slow. - filian 2023</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Am i the only one that wants [insert character from AOT] to be vored by a titan? - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Imagine kissing your toes and ended up licking your foot. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">And he just keeps fricken. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I could turn anything on. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm not hard like that. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">My balls drop lower than the fruits. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">I'm pregnant. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">Guys, good players go on the bottom, so I might as well be one. - filian 2024</div>
+                                </div>
+                                <div class="quote-container">
+                                    <div class="saying">that's all i can think of right now. pls dm me for a specific quote i missed. yes, it can be things she didn't say (within reason).</i></q> -yukimecoq (author & creator of this website)</div>
+                                </div>
+                            </div>
+                        </section><hr>
+                        <h2 class="title-underline-header">Factoids</h2>
+                        <section id="facts" class="indent">
+                            <p>Genuine real-life facts about Filian. No really they are!</p>
+                            <div id="box-of-facts-container">
+                                <div class="fact-container">
+                                    <div class="fact">She used to be in her highschool's cross-country team.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She used to sneak into the dance halls in college just to vibe with the students.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She used to have "severe" concussions when she was a kid. In total, she had 3: her tailbone, her fingers, and her collar bone.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Inspired by a hit children's book, she boiled green eggs without the yolk. She claims it to be delicious and I don't think I'll be eating those.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">One time, when her teacher vented, she pulled a devious lick to make the trash bin talk back. Bro had a great day afterwards.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She was the only person in the world who got her school banend because pistacchios were "writable", that left marks on tables, walls, door, ...</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She dislikes vegetables, soy products, grass (not surprising), spiders (the taste), her twitch mods, yukimecoq, ...</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Her actual cell phone password (as of this writing) is 2632. I recommend the ones with FaceID. It's better.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian owns 2 phones.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian once asked the pilot for the "Mile High Badge." Basically, 5 to 10 VTubers go on the aeroplane and use the same bathroom, using the same toilet. There's a reward for that if you survived the whole flight.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She drives a 2020 Nissan Camry.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Statistically speaking, she had been involved in 9 accidents since owning a car. One of them was tailboned. The man in front had no insurance</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She used to commute 2 hours to get to her school 4 times a week.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She travels a lot as a child.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She is very edgy. When TikTok was bought by ByteDance in 2017, she became addicted to it. The jokes she says on stream are her primary source of our entertainment.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She used to have an injury on stream. I think it was she smacked herself in the wall, and ont tell us if she's file (typical).</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Her wisdom teeth stream is the most accurate depiction of drink Filian (the Four Loko thing stood no chance).</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She has ADHD. I think I might've gotten that from her because now I make random noises in public. And I don't know why I'm like this.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Her WPM was 98 before spraining her fingers. Since streaming, it's down to ~84. Even worse, her key binds are mostly top row when playing games.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She is scared of going to large events.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">One time, I asked her at OffKai what the most memorable sunrise was like. She says something like, "While running around the lake, I saw ducks swimming and it was very cute."</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">One time, while hiking, a flash flood swamped her and her friend's family. Thinking of not ruining her shoes, she jumps to save them. All of their family survived.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She admitted to chat, friends. and her mods as of October 2022, that she is a bona-fide furry connoisseur.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She is scared of being alone, sometimes telling us on Discord she wished to stream more often for us. That's cute.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She has a fan-base we go by as "Snackers" because Filian's favourite food is Welch's Fruit Snacks.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She also has a fan-base we go by as "Smackers." Despite being flat as the Earth, she is categorically a bottom, according to Numi.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Did I mention she is a bottom?</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Apparently, microwaving cereal is a Canadian thing. Is she Canadian? Ask Neuro-sama.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Rekson owns a surplus amount of lotions. I could be wrong, but I think dry skin can be the worst feeling you can get, so please buy some for your sake and drink plenty of water afterwards.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Yes, she gets excited sometimes and that her skirt does that, too. It's like having two brains for a person.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Her screams are comapred to that of a jackhammer.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She broke $10,000 in VR equipment. That about the average down payment of a sportscar.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">To be more specific, on one stream, Filipino Boy <span style="font-style: italic; display: contents;">specifically</span> broke 4 headsets since starting Twitch, which amounts to $2400 (€2250.06 in 2023).</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Before moving to her new apartment, she puts 4 holes in her wall. One of them was the infamous Buttwall (Feb 2022-Dec 2022)</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She owns a lot of things chat suggests she should buy. One of them was a bunny outfit, and made a whole stream for it. Smackers LOVE it.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">To this day, she still did not properly install her 4090 graphics card (I don't think), when compared to previous streams.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">You know, this would've been Neuro's first collab with Filian, and first collab to participate in the date show, and their first collab ever. Because Neuro made a pro-gamer move, she chose Miyune as her first collab instead. RIPBOZO.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She has dabbled in <a class="voice-act" href="https://youtube.com/watch?v=g06Wjcf3JRg" target="_blank">voice acting</a>, her first and last time she's had one (for now).</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Here's Filian's highs and lows. Ready? L: 48 H: 152</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Oops! Did I say her Virginity Password was 2632. I meant 836189. I hope that clears this misconception up.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">One time, she didn't study. At that point, she become desperate and secretly hid her notes on the floor without the teacher cataching her. She was suspended for 1 week for cheating and was grounded till she went back to school.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian has Sysnethesia. What does that mean? Any object in the world can eb interpreted as either some color/action. For example, what color are her boobs?</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Over the span of 3 years from 2020, she average about $7,700 (€7,023.17 in 2023) on VR equipment. Per year.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Neuro-sama's frequent collabs (apart from Anny/Camila) is Filian, with the total of 8 times as of the 30th of December, 2023.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian foolishly admitted to consuming 6 paper plates since starting her streaming career. When Filian discovers egg shells rotting in the very crevasses of her room, she considered putting them on top of the plates and eating it. Chat went nuts!</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She holds the Guiness Book of World Records for longest handstand, clocking in at 34 seconds.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian was authorized to pay $15k for breaking the gloves, relatively short of her monthly gifted subscriptions.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She once ate a rock. It was so dry she ate another one to test the waters.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">The refrigerator contents amounts to more than 50% of expired milk that she consumes. The other portion are expired food subscription packages + expired green eggs and ham.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">All Filian wanted to do was watch a movie on the airplane. She's so home-bound she forgot that her seat was reclining behind that man. She didn't even apologize after the fact.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Her all-time high score in Suika Game was 2808, after her second try. Don't worry about subsequent streams and the one with Henya.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">On rare occasions, she goes outside in a skirt, and the winds started to take the wheel. She doesn't own any underwear.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">On the same day, she ousted herself to a nudist beach to release her inner furry virginity. This was the first time she has ever came out of the closet like that.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian's SNN is 3782.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Filian failed her driving test twice.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Despite being an anime fan, she hates Konosuba.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Someone told me there was Filian merchandise. Why didn't Filian decide to do so in the first place? <a class="voice-act" href="https://cuddlyoctopus.com/product/filian/" target="_blank">Link</a></div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">During her Chaotic stream collab with ChibiDoki, Trickywi, and Pippa, Filian would have been self-entitled to earning Most Chaotic VTuber by a landslide, had she decided to nominate herself.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Her new record was 12 flips on 12/27/23. But here's something else interesting: her longest flashbang was 64 seconds that occurred on December 2022.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">I kept saying things about her broken equipment, but let's be real. This costed about half of her income annually, and that's by far no exaggeration on my end.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">On 1/1/24, Filian decided to take the Husband/Wife test. She scored lowest of the all scores on both spectrums, clocking in on average 0.4% husband/wife material.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Rumour has it in the Community tab on Filian's YouTube channel, she made her own memes. You can see this when you click/tap on the image.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">One day she was offered chocolates at La Maison Du Chocolat. They were so good that she bought some online. A few days later, contemplating whether the $80 for 30 packs were worth it, was scammed for saying it was dark chocolate. I asked if she had read the label beforehand. I did not hear back.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">Despite having an ID she carries around (I believe), she never remembers her birthday. Her birthdate is speculative as a result.</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">She is top 500 in all of Twitch, which translates to "Sorry, I don't do this for money!"</div>
+                                </div>
+                                <div class="fact-container">
+                                    <div class="fact">I have no more facts for you because I lost all my braincells thinking of some. DM me if I forgot something.</div>
+                                </div>
+                            </div>
+                        </section><hr>
+                        <h2 class="title-underline-header">Gallery</h2>
+                        <section id="img-vid" class="indent">
+                            <p>The previous layout of the website highlights the inefficiencies of where to place the images and videos
+                                of Filian, which I hope you'll forgive. It's hard-coded before I even knew any simpler
+                                way to do it. But why not compile all of them in this one section so it doesn't look feel like any 
+                                Wiki/Fandom page? Would it really be that bad for you guys? Is it too much for you chat? Please let me know!
+                            </p>
+                            <div class="media">
+                                <figure>
+                                    <a href="/images/gilian-background.png" target="_blank"><img src="/images/gilian-background.png" alt="Gilian"></a>
+                                    <figcaption>Gilian, My Beloved! But please don't smile when you know you're about to blow up the whole apartment.</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="/images/yellowwelchs.webp" alt="Yellow Welchs">
+                                    <figcaption>I bet these things exist.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/charlie.jpg" target="_blank"><img src="/images/charlie.jpg" alt="Charlie"></a>
+                                    <figcaption>A classic.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/filian-singing-voice-var2.png" target="_blank"><img src="/images/filian-singing-voice-var2.png" alt="SingingV1"></a>
+                                    <figcaption>A failed attempt to never let Filian cook and sing.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/filian-singing-voice-var1.png" target="_blank"><img src="/images/filian-singing-voice-var1.png" alt="SingingV2"></a>
+                                    <figcaption>Not even a minute later and she dismisses those allegations.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/djClancy.png" target="_blank"><img src="/images/djClancy.png" alt="Dan Clancy was here."></a>
+                                    <figcaption>CEO moment. *NOT FAKE 100% REAL!!!!!*</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/followers.png" target="_blank"><img src="/images/followers.png" alt="Followers"></a>
+                                    <figcaption>💜 Where it all began. I'm so proud of her 💜</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/debut-outfit.png" target="_blank"><img src="/images/debut-outfit.png" alt="Outfit"></a>
+                                    <figcaption>I guess we'll never know when the debut will occur 😔</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/boiled-fruitsnacks.jpg" target="_blank"><img src="/images/boiled-fruitsnacks.jpg" alt="EWW"></a>
+                                    <figcaption>What the fuck is that 🤮🤮🤮</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/coming-on-your-ass.jpg" target="_blank"><img src="/images/coming-on-your-ass.jpg" alt="Coming"></a>
+                                    <figcaption>"I'm coming for that ass tonight. You hear me? I'm coming for that ass!"</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/ectoplasm.jpg" target="_blank"><img src="/images/ectoplasm.jpg" alt="Ectoplasm"></a>
+                                    <figcaption>Molten wax.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/lube-life.jpg" target="_blank"><img src="/images/lube-life.jpg" alt="Lube Life"></a>
+                                    <figcaption>There's a story behind this that everyone keeps memeing about. And no it doesn't go on pancakes.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/luong-downfall.png" target="_blank"><img src="/images/luong-downfall.png" alt="Luongshar"></a>
+                                    <figcaption>He stopped modding for chat and I still miss him dearly 😔</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/throw-it-back.gif" target="_blank"><img src="/images/throw-it-back.gif" alt="Fansly"></a>
+                                    <figcaption>no.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/waifu-cup-prototype.jpg" target="_blank"><img src="/images/waifu-cup-prototype.jpg" alt="Waifu Cup"></a>
+                                    <figcaption>A piece of lost media found in the depths of the internet.</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/filian-sussy.png" target="_blank"><img src="/images/filian-sussy.png" alt="Sussy Filian"></a>
+                                    <figcaption>I knew it!</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/last-stream.png" target="_blank"><img src="/images/last-stream.png" alt="Last Stream"></a>
+                                    <figcaption>See you next year (or not)</figcaption>
+                                </figure>
+                                <figure>
+                                    <a href="/images/timothy.png" target="_blank"><img src="/images/timothy.png" alt="Timothy"></a>
+                                    <figcaption>I guess Timothy did not live up to his fame after what Filian did to him.</figcaption>
+                                </figure>
+                                <figure>
+                                    <video controls poster="images/yellowwelchs.webp">
+                                        <source src="videos/fillyHugeAss.mp4" type="video/mp4">
+                                        <source src="videos/fillyHugeAss.webm" type="video/webm">
+                                        If you can't see the video, you might want to switch to a new browser.
+                                    </video>
+                                    <figcaption id="video-desc">A definite Power Bottom.<br>
+                                    <a href="https://www.youtube.com/watch?v=BwzoFHpM9Gk" target="_blank">@LegalriceVTClips</a>
+                                    Occured on 3/16/23 ~00:51 UTC</figcaption>
+                                </figure>
+                                <figure>
+                                    <video controls poster="images/yellowwelchs.webp">
+                                        <source src="videos/newMerch.mp4" type="video/mp4">
+                                        <source src="videos/newMerch.webm" type="video/webm">
+                                        If you can't see the video, you might want to switch to a new browser.
+                                    </video>
+                                    <figcaption id="video-desc">Did I mention that she has merch?<br>
+                                    <a href="https://www.youtube.com/watch?v=EewsfJAi33U" target="_blank">@DailyFilian</a>
+                                    </figcaption>
+                                </figure>
+                                <figure>
+                                    <video controls poster="images/yellowwelchs.webp">
+                                        <source src="videos/snoring.mp4" type="video/mp4">
+                                        <source src="videos/snoring.webm" type="video/webm">
+                                        If you can't see the video, you might want to switch to a new browser.
+                                    </video>
+                                    <figcaption id="video-desc">It's clearly Numi inspired!</figcaption>
+                                </figure>
+                                <figure>
+                                    <video controls poster="images/yellowwelchs.webp">
+                                        <source src="videos/filian-shit.mp4" type="video/mp4">
+                                        <source src="videos/filian-shit.webm" type="video/webm">
+                                        If you can't see the video, you might want to switch to a new browser.
+                                    </video>
+                                    <figcaption id="video-desc">You've changed. -Reiviar</figcaption>
+                                </figure>
+                                <figure>
+                                    <video controls poster="images/yellowwelchs.webp">
+                                        <source src="videos/lemon.mp4" type="video/mp4">
+                                        <source src="videos/lemon.webm" type="video/webm">
+                                        If you can't see the video, you might want to switch to a new browser.
+                                    </video>
+                                    <figcaption id="video-desc">It's clearly Miku-inspired! -<a href="/images/lemon-rex.png" target="_blank">Rex</a></figcaption>
+                                </figure>
+                                <figure>
+                                    <audio controls preload="auto">
+                                        <source src="videos/realvoice.mp3" type="audio/mp3">
+                                        <source src="videos/realvoice.ogg" type="audio/ogg">
+                                    </audio>
+                                    <figcaption>The real voice of Filian!</figcaption>
+                                </figure>
+                            </div>
+                            <p>By the way, if you cum all this way so far, good job! You ruined your relationship with your significant other, 
+                                as well as your prized bed. Tell me in the Discord how that went!
+                            </p>
+                        </section><hr>
+                    </div>
+                    <div id="copyright">
+                        <div>
+                            <span>Copyright &copy;2023-<script>document.write(new Date().getFullYear())</script>. All Rights Reserved.</span>
+                            <img src="images/discordIcon.webp" width="20" usemap="#discordlink">
+                            <map name="discordlink">
+                                <area shape="rect" coords="0,0,20,20" href="https://discordapp.com/users/858915193912164402" target="_blank">
+                            </map>
+                        </div>
+                        <div class="box-2"> 
+                            <img src="images/banner.png" alt="Filian Banner" width="300">
+                        </div>
+                    </div>
                 </div>
                 <div id="table-container">
                     <table>
                         <thead>
-                            <th class="sans-font cell-radius" style="background-color: white;">Filian</th>
-                            <tr class="cell-radius" style="background-color: white;">
+                            <th class="cell-radius">Filian</th>
+                            <tr class="cell-radius">
                                 <td class="cell-radius">
                                     <figure>
                                         <a href="image resolution/anniversary.html" id="glowup">
@@ -108,12 +783,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <th class="cell-radius" style="background-color: white;">Basic Info</th>
+                            <th class="cell-radius">Basic Info</th>
                             <tr>
-                                <td class="cell-radius">Name: Filian (He/Him)</td>
+                                <td class="cell-radius">Name: Filian (She/Them)</td>
                             </tr>
                             <tr>
-                                <td class="cell-radius" id="dob">Born: October 13th, 1985</td>
+                                <td class="cell-radius" id="dob">Born: 1985/10/13</td>
                             </tr>
                             <tr>
                                 <td class="cell-radius">Age: <span id="age"></span> (Same age as <a href="https://twitch.tv/jerma985" target="_blank">Jerma</a>)</td>
@@ -130,423 +805,20 @@
                             <tr>
                                 <td class="cell-radius">Synonyms: <a href="tabs/synList/filianSyn.html">See Comprehensive List</a></td>
                             </tr>
-                            <th class="cell-radius" style="background-color: white;">Quote</th>
+                            <th class="cell-radius">Quote</th>
                             <tr>
                                 <td class="cell-radius"><i><q>Wha-bam, Wha-zam!</q></i> -Filipino Boy</td>
                             </tr>
                         </tbody>     
                     </table>
+                    <span id="suika-div">
+                        <i class="fa-regular fa-circle-play fa-2x" title="Click me!">
+                            <audio class="suika-audio" src="/videos/suika-game.mp3" loop type="audio/mp3"></audio>
+                            <audio class="suika-audio" src="/videos/suika-game.ogg" loop type="audio/ogg"></audio>
+                        </i>
+                    </span>
                 </div>
-                <div id="surprise">
-                    <img src="images/charlie.jpg" alt="" width="5" height="3" style="max-width: 100%">
-                </div>
-            </div><br><hr>
-
-            <!-- filian, streaming, quote, facts -->
-            <div id="container-3">
-                <article>
-                    <section id="filian" class="sans-font scroll-to title-underline indent">
-                        <h2 class="awkward-spacing filian-title">Filian</h2>
-                        <figure style="font-family: arial;" id="video-right-side">
-                            <video width="300" height="160" controls poster="images/yellowwelchs.webp">
-                                <source src="videos/fillyHugeAss.mp4" type="video/mp4">
-                                <source src="videos/fillyHugeAss.webm" type="video/webm">
-                                Your browser does not support the video tag.
-                            </video>
-                            <figcaption id="video-desc">A definite Power Bottom.<br>
-                            <a href="https://www.youtube.com/watch?v=BwzoFHpM9Gk" target="_blank">@LegalriceVTClips</a><br>
-                            Occured on 3/16/23 ~00:51 UTC</figcaption>
-                        </figure>
-                        <p>Filian is a streamer. What about him? You might have seen clips of his Omegle interactions,
-                            or one time hosted a live dating show that he absolutely did not rip off with a bunch of
-                            VTubers he's never interacted with. Or maybe he falls all the time and likes to make obscene 
-                            jokes about his nuts. I bet that he can possess the ability to rizz anybody (even chat) and 
-                            get hot chicks in just 2 words. "That's cringe!" You exclaim. He's more than just being cringe.
-                            He can be as wholesome as any other VTuber whose chaos and destruction become indiscernible
-                            without knowing why you want to watch him in the first place. This is where we, the Snackers,
-                            come in. Our pristine members of our Discord community share ideas/memes pertaining to things
-                            we love about her 24/7. It could also be something else that isn't Filian. Issues with your PC?
-                            We're right here. Drafted pieces of art? We would love to see them. Making a website that is
-                            definitely not for Filian? I'm right here. We love his streams and will continue to do so until
-                            our sausages are burnt to a crisp. Did I mention you need to read the rules first before doing the
-                            things I listed here?
-                        </p>
-                    </section><hr>
-                    <section id="streaming" class="sans-font scroll-to title-underline indent">
-                        <h2 class="awkward-spacing">Streaming Career</h2>
-                        <p>Usually VTubers have lore. To this day, I don't really know if he has one or not. All I remember
-                            from that one stream goes something like: "I live inside of a cardboard box that's parked right
-                            outside the Welch's Fruit Snack Factory. I am waiting for that sponsorship so I can eat all of 
-                            them and become rich." Others suggest his actual story about VRChat, maybe like: "One day, I 
-                            found this game called VRChat, and I have been addicted to it since." It could be worse. Ask
-                            any Snacker and they'll tell you that she was born a Vaporeon, for example. Did I mention he has 
-                            an unhealthy relationship with Sailor Moon and Sailor Moon merchandise?<br>
-                        </p> 
-                        <p>
-                            Okay, so what content does <span class="underline-thickness">FILIAN</span> like to do? Besides
-                            screaming into the mic every 5 minutes, he does collabs with other VTubers. Examples include:
-                            AkumaNihmune, CottontaleVA, vedal987 (Neuro-sama), Shylily, LaynaLazar, baoo, henyathegenius, 
-                            Camila, ProjektMelody, and some other larger creators. Not gonna lie, the VTubers listed here 
-                            sit at the very edge of the most sussy and eye-catching on a hypothetical scale between virginity 
-                            and impurity. For the record, let's just say Filian had a great time being exposed to lewd interests. 
-                            He even says some on streams for the fun of it. Lewdness is mentioned every collab. When he's by 
-                            himself, we can't always forget the Saturday Night Classic of the YLYL challenge. How it works is that 
-                            on the Filcord in Discord, you go read the rules (FIRST!!!!!!) and find the one that either says 
-                            #funny-vids-for-saturday or #YLYL-punishments. In other words, what will most likely make him laugh, 
-                            and what will most likely make him suffer. Personally, I find that closing his tabs to be a great 
-                            punishment idea because he likes to be masochistic about it. Yes, masochism is what YLYL is all about, 
-                            and we crave that very much. Other contents he provides are: sponsorship games (collect anime waifus); 
-                            YLYL variants (YCYC); VTuber Got Talent; fricking around for 30 minutes (he used to this for an hour 
-                            before switiching to a react segment after May 2023); scuff tech support (yes, this is part of his 
-                            stream etiquette); horror nights; and scuff in general. Did I mention the insane timed chat interactions 
-                            on some compilations that makes streams way more engaging?
-                        </p>
-                    </section><hr>
-                    <section id="quote" class="scroll-to title-underline indent">
-                        <h2 class="awkward-spacing">Quoth the Filian</h2>
-                        <p style="font-size: 18px;">
-                            Some quotes may not be the exact words Filian has said in her streams. But these are close enough.
-                            Below are some of the curated sayings I can pull from the bottom of my fruit snack bowl:
-                        </p>
-                        <div id="box-of-quotes-container">
-                            <div class="quote-container">
-                                <div class="saying">a42 b. lu768. asi-81</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">1 to get ur dna and clone u</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">rg ji;o jkl ulodcvdsf hklrg rhkl hkl hkl uildfd hkl ghiluur</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I got my hotdog stuck in the pencil sharpener</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">asdfadrgth</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">danger's my business and business.. is good</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">If I can't see it, it can't hurt me</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I have a feeling this isn't gonna be fun</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">The cable is flossing me</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I'm a coconut fillyPepega Clap</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">wam bam shangalang</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">It looks like I have cancer in my crotch</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">i talk about tits and make terrible jokes</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">So today we're gonna hang out on horror night with Saruei.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">stop quoting everything I say</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">My mom shoulda pulled out</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I'm hard</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I'm not Filipino, Neuro-sama.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">That's not the only thing that's thick - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">What's in your pants? - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Better to sail the seven seas, than to catch STDs. - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I'm gonna lobotomize mytself. - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Drake Can you do something for me. - filian 2022</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">What is a matting press? - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Frick these fricks - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">If i was in the WWE, my name would be "The Penetrator" - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">*drumroll* Fuck.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">He put the it in the shit-- (realisation) AAAAA!</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Flip, bitch?</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Where are we? Are we in Lugia's stomach? - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Hey it's not so bad, at least we got screwed. - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Alright, well, who wants to get vored? - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Everyone's too busy watching... futa... or something - filian 2023</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I'm gay for my water bottle.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">*tests how flat she is* I'M FLATTER THAN MY MODEL!!!!!!!</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I'm a virgin.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Shidding farding, shidding farding.... -my banner</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">I have a large PP, and I can't help it.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">This is Bear Grylls, and you're watching Jackass. Let's get it.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Filian, do a Dommy-Mommy voice. GO TO YOUR ROOM. EAT YOUR VEGETABLES. BECOME A DOCTOR.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">Now that I'm gone, I guess I'll insert myself in the microwave in the hopes that I'll evolve to be a fruit snacc.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">내눈속에비친 arrow SSsqwn vri8q3igehuis2  owj rhy3qne892 vg817. &lt;-- demonic noises</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">oh god L must 6e tired. myh2nd wr:tin9 is f2llin9 off 2 cLiff :&#40;</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">In 2 quirky qu2rtet, friends unite Drumsy, the punny chicken, t2kes fLi9ht Emi's d2rk cocks, fr2me her doomer 9r2Le While Moxie struts his femboy embr2f 2midst it 2LL, fili2n the short st2ck c2uses ch2os, with endLess Lrun9e for ch2t</i></q> -The 4 Idiots</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">i'm a normal functioning adult. - Fussy Baby</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">i'm below average, it's so average.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">i am an idiot!</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">is that grass? -to Layna</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">marmite is not that bad.</div>
-                            </div>
-                            <div class="quote-container">
-                                <div class="saying">that's all i can think of right now. pls dm me for a specific quote i missed. yes, it can be things she didn't say (within reason).</i></q> -yukimecoq (author & creator of this website)</div>
-                            </div>
-                        </div>
-                    </section><hr>
-                    <section id="facts" class="scroll-to title-underline indent">
-                        <h2 class="awkward-spacing">Factoids</h2>
-                        <p style="font-size: 18px;">Some actual real-life facts about Filian. Here are some:</p>
-                        <div id="box-of-facts-container">
-                            <div class="fact-container">
-                                <div class="fact">She used to be in her highschool's cross-country team.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She used to sneak into the dance halls in college just to vibe with the students.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She used to have "severe" concussions when she was a kid. In total, she had 3: her tailbone, her fingers, and her collar bone.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Inspired by a hit children's book, she boiled green eggs without the yolk. She claims it to be delicious and I don't think I'll be eating those.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">One time, when her teacher vented, she pulled a devious lick to make the trash bin talk back. Bro had a great day afterwards.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She was the only person in the world who got her school banend because pistacchios were "writable", that left marks on tables, walls, door, ...</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She dislikes vegetables, soy products, grass (not surprising), spiders (the taste), her twitch mods, yukimecoq, ...</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Her actual cell phone password (as of this writing) is 2632. I recommend the ones with FaceID. It's better.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian owns 2 phones.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian once asked the pilot for the "Mile High Badge." Basically, 5 to 10 VTubers go on the aeroplane and use the same bathroom, using the same toilet. There's a reward for that if you survived the whole flight.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She drives a 2020 Nissan Camry.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Statistically speaking, she had been involved in 9 accidents since owning a car. One of them was tailboned. The man in front had no insurance</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She used to commute 2 hours to get to her school 4 times a week.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She travels a lot as a child.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She is very edgy. When TikTok was bought by ByteDance in 2017, she became addicted to it. The jokes she says on stream are her primary source of our entertainment.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She used to have an injury on stream. I think it was she smacked herself in the wall, and ont tell us if she's file (typical).</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Her wisdom teeth stream is the most accurate depiction of drink Filian (the Four Loko thing stood no chance).</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She has ADHD. I think I might've gotten that from her because now I make random noises in public. And I don't know why I'm like this.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Her WPM was 98 before spraining her fingers. Since streaming, it's down to ~84. Even worse, her key binds are mostly top row when playing games.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She is scared of going to large events.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">One time, I asked her at OffKai what the most memorable sunrise was like. She says something like, "While running around the lake, I saw ducks swimming and it was very cute."</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">One time, while hiking, a flash flood swamped her and her friend's family. Thinking of not ruining her shoes, she jumps to save them. All of their family survived.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She admitted to chat, friends. and her mods as of October 2022, that she is a bona-fide furry connoisseur.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She is scared of being alone, sometimes telling us on Discord she wished to stream more often for us. That's cute.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She has a fan-base we go by as "Snackers" because Filian's favourite food is Welch's Fruit Snacks.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She also has a fan-base we go by as "Smackers." Despite being flat as the Earth, she is categorically a bottom, according to Numi.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Did I mention she is a bottom?</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Apparently, microwaving cereal is a Canadian thing. Is she Canadian? Ask Neuro-sama.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Rekson owns a surplus amount of lotions. I could be wrong, but I think dry skin can be the worst feeling you can get, so please buy some for your sake and drink plenty of water afterwards.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Yes, she gets excited sometimes and that her skirt does that, too. It's like having two brains for a person.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Her screams are comapred to that of a jackhammer.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She broke $10,000 in VR equipment. That about the average down payment of a sportscar.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">To be more specific, on one stream, Filipino Boy <span style="font-style: italic; display: contents;">specifically</span> broke 4 headsets since starting Twitch, which amounts to $2400 (€2250.06 in 2023).</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Before moving to her new apartment, she puts 4 holes in her wall. One of them was the infamous Buttwall (Feb 2022-Dec 2022)</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She owns a lot of things chat suggests she should buy. One of them was a bunny outfit, and made a whole stream for it. Smackers LOVE it.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">To this day, she still did not properly install her 4090 graphics card (I don't think), when compared to previous streams.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">You know, this would've been Neuro's first collab with Filian, and first collab to participate in the date show, and their first collab ever. Because Neuro made a pro-gamer move, she chose Miyune as her first collab instead. RIPBOZO.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She has dabbled in <a class="voice-act" href="https://youtube.com/watch?v=g06Wjcf3JRg" target="_blank">voice acting</a>, her first and last time she's had one (for now).</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Here's Filian's highs and lows. Ready? L: 48 H: 152</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Oops! Did I say her Virginity Password was 2632. I meant 836189. I hope that clears this misconception up.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">One time, she didn't study. At that point, she become desperate and secretly hid her notes on the floor without the teacher cataching her. She was suspended for 1 week for cheating and was grounded till she went back to school.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian has Sysnethesia. What does that mean? Any object in the world can eb interpreted as either some color/action. For example, what color are her boobs?</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Over the span of 3 years from 2020, she average about $7,700 (€7,023.17 in 2023) on VR equipment. Per year.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Neuro-sama's frequent collabs (apart from Anny) is Filian, with the total of 7 times as of the 22nd of November.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian foolishly admitted to consuming 6 paper plates since starting her streaming career. When Filian discovers egg shells rotting in the very crevasses of her room, she considered putting them on top of the plates and eating it. Chat went nuts!</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She holds the Guiness Book of World Records for longest handstand, clocking in at 34 seconds.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian was authorized to pay $15k for breaking the gloves, relatively short of her monthly gifted subscriptions.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">She once ate a rock. It was so dry she ate another one to test the waters.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">The refrigerator contents amounts to more than 50% of expired milk that she consumes. The other portion are expired food subscription packages + expired green eggs and ham.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">All Filian wanted to do was watch a movie on the airplane. She's so home-bound she forgot that her seat was reclining behind that man. She didn't even apologize after the fact.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Her all-time high score in Suika Game was 2808, after her second try. Don't worry about subsequent streams and the one with Henya.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">On rare occasions, she goes outside in a skirt, and the winds started to take the wheel. She doesn't own any underwear.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">On the same day, she ousted herself to a nudist beach to release her inner furry virginity. This was the first time she has ever came out of the closet like that.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian's SNN is 3782.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">Filian failed her driving test twice.</div>
-                            </div>
-                            <div class="fact-container">
-                                <div class="fact">I have no more facts for you because I lost all my braincells thinking of some. DM me if you forgot something.</div>
-                            </div>
-                        </div>
-                    </section><hr>
-                </article>
             </div>
         </main>
-
-        <div id="container-6">
-            <div class="copyright">
-                <span>Copyright &copy;<script>document.write(new Date().getFullYear())</script>. All Rights Reserved.</span>
-                <img src="images/discordIcon.webp" width="20" usemap="#discordlink">
-                <map name="discordlink">
-                    <area shape="rect" coords="0,0,20,20" href="https://discordapp.com/users/858915193912164402" target="_blank">
-                </map>
-            </div>
-        </div>
     </body>
 </html>

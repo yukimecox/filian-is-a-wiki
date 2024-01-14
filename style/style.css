@@ -1,114 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@500&display=swap');
-/* the whole website */
 * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    padding: 0;
     margin: 0;
-    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #202020;
 }
-
-/* also the whole website: background image */
-body {
-    background-color: rgba(253, 240, 240, 0.836);
-    margin: 8px 25px 10px 25px;
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 7rem;
 }
-#background-img {position: relative;}
-#background-img::before {
-    content: "";    /* background image appears before everything else above it (relative to z-axis) */   
-    background-image: url(../images/fruitSnack.png);
-    background-size: 50px 50px;     /* repeated background img in both x and y axes */
-    position: absolute;     /* set origin to top left corner of container-2 (i think) */
-    /* default reset by css */
+.banner {
+    position: sticky;
     top: 0;
     left: 0;
-    /* have it be restricted to 50px 50px (note that 0 0 would default to not appear) */
-    width: 100%;
-    height: 100%;
-    opacity: 0.15;  
-    /* ensure that our background image always stays in the background */
-    z-index: -9999;
-    /* basically, delete whatever remains of the background img that we have applied to really do anything else */
-    pointer-events: none;   
-}
-a:link { color: rgb(255, 183, 195);}
-a:visited { color: rgb(88, 51, 3);}
-a:hover { background-color: rgb(3, 173, 173);}
-a:active {color: red;}
-
-/* container 1: logo, website name, banner, etc. */
-/* figure this out afterwards. do so for each container */
-#container-1 {
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     justify-content: space-between;
+    max-width: auto;
+    align-items: center;
+    padding: 7px 9px;
+    background-color: #111111;
+    z-index: 9999;
 }
-.box-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-.box-1 img {
-    width: 100px;
+a:link {color: red;}
+a:visited {color: red;}
+
+#logo {
+    width: 50px;
     border-radius: 100%;
-    border: 4px solid red;
+    border: 0.3ch solid red;
 }
-.box-1 h1 {
-    font-size: 22px;
-    line-height: 1.5rem;
+.banner > i {visibility: hidden;}
+
+.containers {
+    display: flex;
+    color: white;
 }
-.box-2 img { max-width: 100%;}
-@media (max-width: 530px) {
-    #container-1 .box-2{
-        display: flex;
-        align-items: center;
-    }
+.left-container {
+    position: fixed;
+    top: auto;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    border-right: 4px solid #171717;
+    font-family: 'Titillium Web', sans-serif;
+    line-height: 1.20;
+    font-size: 14px;
+    z-index: 9999;
+    display: block; /*for larger monitors*/
+    overflow-y: auto;
+}
+.content-links a {
+    display: grid;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.content-links a:hover { 
+    background-color: #4f2dfb;
+    color: #f5f8fa;
 }
 
-/* container 2: sidebar, bio table, table of contents, etc. */
-#container-2 {
-    display: grid;
-    grid-template-columns: 185px auto auto;
-    gap: 20px;
-    padding-top: 10px;
+.middle-container {
+    flex: 1; /* Take up remaining space in the flex container */
+    padding: 0 280px 0 200px; /* Update padding for better layout */
+    font-family: 'Grandstander', cursive;
+    font-size: 18px;
 }
-#sidebar { 
-    display: flex;
-    flex-direction: column;
-    border: 3px solid rgba(88, 46, 23, 0.399);
-    border-radius: 12px;
-    background-color: white;
+.message-container { 
     height: auto;
-    padding: 15px 10px;
+    color: black;
 }
-#sidebar li { list-style-type: none;}
-#sidebar video, #sidebar figcaption { display: none;}
-#content-links { 
-    display: grid;
-    gap: 20px;
-}
-#tabs-container li {
-    line-height: 1.75em;
-    margin-top: -7px;
-}
-#content-list li{ line-height: 1.5em;}
-#table-of-contents header { 
-    text-decoration: underline;
-    padding-bottom: 20px;
-}
-#table-of-contents li { margin-top: -3px;}
-#message-board { height: auto;}
 #frick {
     box-sizing: border-box;
     background-color: rgb(162, 79, 79);
     border: 3px dashed;
-    border-radius: 10px;
-    padding: 10px;
+    padding: 8px;
     animation: border 0.15s infinite alternate;
 }
 /* change the title when resizing. >= 400px */
 #frick h2::before { content: "What The Frick Is This";}
-#frick h2, p, #special-message { margin-top: 20px;}
+#frick h2, p, #special-message { 
+    margin-top: 10px;
+    background-color: rgb(162, 79, 79);
+}
 /* have the frick border blink instantaneously between two colours */
 @keyframes border {
     0%, 49.99% { border-color: purple; }
@@ -127,165 +103,34 @@ a:active {color: red;}
     flex-direction: column;
     box-sizing: border-box;
 }
-#special-message audio { padding: 0 10px;} 
+#special-message audio { 
+    padding: 0 10px;
+    background-color: white;
+} 
 #audio-desc { 
     text-align: left;
     padding: 5px 15px 0 15px;
-}
-#table-container table { 
-    border: 3px solid black; 
     background-color: white;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 5px;
 }
-#table-container tr, figure {padding: 15px 0;}
-.cell-radius { 
-    border-radius: 5px;
-    text-align: center;
-}
-#table-container a:hover { background-color: rgba(253, 240, 240, 0.424);} 
-/* A to B instant transform */
-#table-container #glowup:hover img { transform: rotate(-4deg) scale(1.05);}
-/* A to B animate transition above */
-#table-container img { 
-    background-origin: border-box;
-    transition: transform 0.07s ease-out;
-    box-shadow: 3px 3px 5px #666;
-}
-/* the table should expand when adding characters for each cell. 
-absolutely should not be in block (unless an item has capped width) */
-td, th { border: 2px solid #270ee0;}
-#table-container tr:hover { background-color: rgb(163, 147, 178);}
-#table-container th, #table-container figure { padding-right: 0px;}
-#surprise {
-    grid-area: 2 / 2 / 2 / 3;
-    max-width: 150%;
-    margin-top: -8%;
-    margin-left: 50%;
-    z-index: 1;
-}
-/* same idea */
-#surprise img:hover, #surprise img:focus { transform: rotate(-15deg) scale(280);}
-#surprise img { transition: transform 0.05s ease;}
-/* if screen size limits frick container, stack items */
-/* hardest to code. frick is only resizeable -> convert to stacking */
-@media (max-width: 1060px) {
-    #container-2 {
-        grid-template-columns: 1fr;
-        row-gap: 20px;
-    }
-    /* keep the same formatting before item stacking */
-    #content-links {
-        display: flex;
-        flex-direction: column;
-    }
-    .short-line { max-width: 160px;}
-    #sidebar video {
-        border: 2px solid yellow;
-        margin-bottom: 20px;
-    }
-    /* the video and figcaption should appear. do not delete this!! */
-    #sidebar video, #sidebar figcaption { 
-        display: flex;
-        border-radius: 10px;
-        font-family: 'Times New Roman', Times, serif;
-    }
-    /* change origin to be top-left of container-2; move to the farthest right side. */
-    #sidebar #hidden-video {
-        max-width: 80%;
-        position: absolute;
-        right: 20px;
-    }
-    /* this should not appear when resized */
-    #surprise { display: none;}
-}
-@media (max-width: 515px) {
-    /* i hate that my surprise clips through the rel links. this should not appear. */
-    #sidebar video, #sidebar figcaption { display: none;}
-}
+.title-underline, h2 { text-decoration: underline; }
+.title-underline-header {padding-top: 15px;}
+/* .article-container .indent {text-indent: 2em;} */
+.indent p, #copyright { text-indent: 2em; }
 @media (max-width: 420px) {
-    /* flex container of both sides so no overlaps occur (stays bounded to hr) */
-    #container-2 {
-        display: flex;
-        flex-direction: column;
-    }
     /* change the title when resizing. < 400px */
     #frick h2::before { content: "What's this";}
 }
-
-/* container 3: sections, audio/video, etc. */
-#container-3 { line-height: 1.25em;}
-#filian, #streaming, #quote, #facts { 
-    margin-top: 20px;
-    margin-bottom: 10px;
+#filian > p, #streaming > p, #quote > p, #facts > p, #img-vid > p {background-color: #202020;}
+.article-container {
+    padding: 10px 20px;
+    line-height: 1.5;
 }
-#filian #video-right-side {
-    float: right;
-    background-color: white;
-    border: 2px solid blue;
-    border-radius: 10px;
-    margin: -10px 0px 0px 10px;
-    font-size: 15px;
-    padding-top: 0;
-}
-#filian video {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 2px solid blue;
-}
-#container-3 #video-desc { 
-    padding-left: 10px;
-    margin-bottom: 0px;
-}
-#container-3 a:link {color: blue;}
-#container-3 a:visited {color: purple;}
-#container-3 a:hover {
-    background-color: white;
-    color: black;
-}
-#container-3 a:active {color: red;}
-/* layout filian section with video */
-@media (max-width: 420px) {
-    #filian { 
-        display: flex;
-        flex-direction: column;
-    }
-    .filian-title { 
-        position: relative;     /* rank the title as highest (goes first) */
-        bottom: 5vh;            /* section title position */
-    }
-    #filian #video-right-side, .filian-title { padding-top: 5vh;}
-    /* optimize the video layout to fit border 
-    (video format cannot contain border, so ignore that) */
-    #filian #video-right-side, video {
-        width: 100%;    
-        height: auto;   
-        padding-top: 0; /* extra space deleted */
-        margin-left: 0; /* hanging indent. reset left margin to 0px */
-    }
-}
-#container-3 p {line-height: 1.55em; }
-.underline-thickness { position: relative;}
-.underline-thickness::after {
-    content: "";    /* the underline occurs after the word "FILIAN" */
-    position: absolute;
-    left: 0;
-    bottom: 1px; /* move the underline up or down */
-    width: 100%;
-    height: 3px; /* how thick should the underline be */
-    background-color: black; /* underline color */
-}
-#quote ul a { text-decoration: none;}
-#quote ul, #facts ul { 
-    list-style-type: none;
-    margin-left: 50px;
-}
-#box-of-quotes-container, #box-of-facts-container {
+#quote, #facts {padding-bottom: 15px;}
+#box-of-quotes-container, #box-of-facts-container, .media {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin: 30px 10px;
+    margin-top: 15px;
     font-family: 'Grandstander', cursive;  
 }
 .quote-container, .fact-container {
@@ -295,63 +140,110 @@ td, th { border: 2px solid #270ee0;}
     font-size: 18px;
     border-radius: 10px;
 }
-.quote-container .saying {background-color: #a998e8;}
-.quote-container .saying:hover {background-color: #fcfcfc;}
+.quote-container .saying {background-color: #5b38db;}
 .saying, .fact {
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 100%;
     align-items: center;
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(98, 98, 98);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
 }
 /* alternate rows that applies to each container for that row */
-.quote-container:nth-child(even) .saying:nth-child(n) {background-color: #ffdbdb;}
-.quote-container:nth-child(even) .saying:nth-child(n):hover {background-color: white;}
-@media (max-width: 426px) {
-    .quote-container .saying {background-color: white;}
-    .quote-container:nth-child(even) .saying:nth-child(n){
-        margin: 0;
-        background-color: white;
-    }
-}
+.quote-container:nth-child(even) .saying:nth-child(n) {background-color: #fc6a6a;}
 .fact > .voice-act {display: contents;}
-@media (max-width: 1035px) {
-    .list-hover {
-        line-height: 170%;
-        padding-right: 50px;
-        font-size: 15px;
-    }
-}
-
-/* container 6: copyright info, sns links */
-#container-6 { 
-    padding-left: 20px;
+/* copyright: copyright info, sns links */
+#copyright { 
     margin-top: 1vh;
     margin-bottom: 5vh;
     font-family: monospace;
     font-size: 12px;
 }
 /* note: moving the discord logo extends the hover area, please fix that to make it relative. */
-#container-6 img {
+#copyright img {
     margin-left: 10px;
     margin-bottom: -1vh;
 }
 @media (max-width: 1035px) {
-    #container-6 { font-size: 12px;}
+    #copyright { font-size: 12px;}
+}
+.box-2 img { 
+    position: relative;
+    left: -20px;
+    max-width: 100%;
+    margin-top: 10px;
+    background-color: white;
+}
+/* Apply styling to limit figure, figcaption, and image to 300px */
+.media figure {
+    max-width: 300px;
+    margin: 0 auto; /* Center the figure if the width is less than 100% */
+    display: inline-block;
+    align-self: center;
+}
+.media img, .media video {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+.media figcaption {
+    max-width: 300px;
+    margin: 0 auto; /* Center the figcaption if the width is less than 100% */
 }
 
-/* classes or multiple ids not specified in each container */
-.sans-font p, th {
-    font-family: "Comic Sans MS", "Comic Sans";
-    letter-spacing: 0.11px;
+#table-container {
+    position: fixed;
+    top: auto;
+    right: 0;
+    width: 280px; /* Set the width of the right container */
+    height: 100vh;
+    border-left: 4px solid #171717;
+    font-family: 'Grandstander', cursive;
+    padding-right: 4px;
+    font-size: 0.83rem;
 }
-.awkward-spacing {line-height: 0;}
-/* for each section, upon clicking to a section, scroll to that one. 
-top-scroll offset is 16px due to text cutoff. */
-.scroll-to {scroll-margin-top: 16px;}
-.title-underline h2 { text-decoration: underline; }
-.indent p { text-indent: 2em; }
+#table-container table { 
+    background-color: white;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+}
+#table-container tr, figure {padding: 15px 0;}
+.cell-radius { 
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 0;
+}
+/* A to B instant transform */
+#table-container #glowup:hover img { transform: rotate(-4deg) scale(1.05);}
+/* A to B animate transition above */
+#table-container img { 
+    background-origin: border-box;
+    transition: transform 0.07s ease-out;
+    box-shadow: 3px 3px 5px #4a4848;
+}
+#table-container tr:hover { background-color: rgb(163, 147, 178);}
+tbody a {color: red;}
+#suika-div i {
+    color: white;
+    padding: 10px;
+    font-size: 1.25rem;
+}
+#suika-div i:hover {filter: brightness(0.7);}
+@media screen and (max-width: 825px) {
+    .banner > i {
+        visibility: visible;
+        color: white;
+        cursor: pointer;
+    }
+    .left-container.active {display: none;} /*define the active toggle for clicking the icon (none by default in mobile)*/
+    .content-list > ul {list-style-type: none;}
+    .middle-container {padding: 0;}
+    .quote-container .saying {background-color: rgb(144, 144, 144);}
+    .quote-container:nth-child(even) .saying:nth-child(n){
+        margin: 0;
+        background-color: rgb(144, 144, 144);
+    }
+    #table-container {display: none;}
+}

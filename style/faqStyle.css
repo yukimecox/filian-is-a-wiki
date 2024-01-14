@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+body {
+    padding: 0 20px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: rgb(42, 42, 42);
+}
+header { 
+    margin-bottom: -10px;
+    color: white;
+}
+dd {display: none;}
+dd.is-open {display: block;}
+.faq-question {
+    border: 2px solid rgb(1, 1, 169);
+    border-radius: 10px;
+    background-color: rgb(66, 141, 247);
+    padding: 0 10px;
+    margin-top: 10px;
+}
+.faq-question:hover {filter: brightness(0.9);}
+/* specify the style so it targets the changes (espeically when you resize the screen) */
+.faq-question img, .faq-answer img {
+    padding-top: 10px;
+    max-width: 100%;
+}
+.text {display: none;}
+.faq-answer {
+    border-bottom: 2px solid red;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 5px;
+    background-color: rgb(176, 255, 255);
+    font-weight: bolder;
+}
+@media (max-width: 768px) {
+    .faq-question:hover {filter: brightness(1);}
+    /* what i mean here */
+    .faq-question img {display: none;}
+    .faq-question .text { 
+        display: block; 
+        font-weight: bolder;
+        font-size: 1.5rem;
+        padding: 10px 0;
+    }
+    .faq-answer img {display: none;}
+    .faq-answer .text { 
+        display: block; 
+        font-style: italic;
+    }
+}
+footer a {
+    text-decoration: none;
+    font-weight: 800;
+}
+footer a:link {color: white;}
+footer a:visited {color: white;}
+footer a:hover {color: rgb(237, 138, 138);}

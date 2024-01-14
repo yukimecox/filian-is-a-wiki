@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+}
+/* center everything in body tag */
+body {
+    background-image: url("/images/awards-background.jpg");
+    background-size: contain;
+    /* center everything in body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+.left-arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.2rem;
+    border-radius: 10%;
+    box-shadow: 0 2px 16px rgb(255, 255, 255);
+}
+.container {
+    width: 1200px;
+    height: 80%;
+    /* padding: 0px; */
+    box-shadow: 0 2px 16px rgb(255, 255, 255);
+    border-radius: 20px;
+    margin: 0 10px;
+    overflow: auto;
+    letter-spacing: 0.10rem;
+}
+.tab_box {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 2px solid rgba(229,229,229);
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+.tab_box .tab_btn {
+    font-size: 18px;
+    font-weight: 600;
+    color: #919191;
+    background: none;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+}
+/* when each tab is chosen to read (automatically added in console) */
+.tab_box .tab_btn.active {
+    color: #7360ff;
+}
+.content_box {
+    padding: 20px;
+    overflow-x: hidden;
+}
+/* use js to go to each section to display content */
+.content_box .content {
+    display: none;
+    animation: moving 0.5s ease;
+}
+@keyframes moving {
+    from{transform: translateX(50px); opacity: 0;}
+    to{transform: translateX(0px); opacity: 1;}
+}
+.content_box .content.active {
+    display: block;
+}
+.content_box .content h2 {
+    margin-bottom: 10px;
+}
+.award-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    font-family: 'Grandstander', cursive;
+}
+.winner-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    font-family: 'Grandstander', cursive;
+}
+/* all award-photos of anchor tags are centered per child */
+.award-photos a {display: flex;}
+.winner-photos a {display: flex;}
+.award-photos img, .award-photos video {
+    border: 2px solid rgb(169, 144, 2);
+    max-width: 300px;
+    margin: 0 auto; 
+    align-self: center;
+    width: 100%;
+    height: auto;
+}
+.winner-photos img {
+    border: 2px solid rgb(169, 144, 2);
+    margin: 0 auto; 
+    align-self: center;
+    width: 100%;
+    height: auto;
+}
